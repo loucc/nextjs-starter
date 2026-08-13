@@ -1,6 +1,8 @@
 import { Callout } from "@/components/mdx/Callout";
+import { JsonLd } from "@/components/JsonLd";
 import { Locale, LOCALES } from "@/i18n/routing";
 import { getPosts } from "@/lib/content";
+import { blogPostingJsonLd } from "@/lib/jsonLd";
 import { constructMetadata } from "@/lib/metadata";
 import { BlogPost } from "@/types/blog";
 import { Metadata } from "next";
@@ -56,6 +58,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 
   return (
     <div className="w-full md:w-3/5 px-2 md:px-12">
+      <JsonLd data={blogPostingJsonLd(post, locale)} />
       <h1 className="break-words text-4xl font-bold mt-6 mb-4">{post.title}</h1>
       {post.image && (
         <img src={post.image} alt={post.title} className="rounded-sm" />

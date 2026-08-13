@@ -174,5 +174,13 @@
     "alreadyJoined": "This email is already on the waitlist.",
     "errorMessage": "Something went wrong. Please try again.",
     "turnstileRequired": "Please complete the security check"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again, or come back later.",
+    "retry": "Try again",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to homepage"
   }
 }

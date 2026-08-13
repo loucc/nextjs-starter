@@ -1,4 +1,10 @@
 import HomeComponent from "@/components/home";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  organizationJsonLd,
+  softwareApplicationJsonLd,
+  webSiteJsonLd,
+} from "@/lib/jsonLd";
 
 // The homepage reads the showcase from D1 at request time
 // (components/home/Showcase.tsx → lib/showcase.ts). getCloudflareContext
@@ -7,5 +13,12 @@ import HomeComponent from "@/components/home";
 export const dynamic = "force-dynamic";
 
 export default function Home() {
-  return <HomeComponent />;
+  return (
+    <>
+      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={webSiteJsonLd()} />
+      <JsonLd data={softwareApplicationJsonLd()} />
+      <HomeComponent />
+    </>
+  );
 }

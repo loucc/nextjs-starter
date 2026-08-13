@@ -174,5 +174,13 @@
     "alreadyJoined": "このメールアドレスは既に登録されています。",
     "errorMessage": "問題が発生しました。もう一度お試しください。",
     "turnstileRequired": "セキュリティ確認を完了してください"
+  },
+  "Error": {
+    "title": "エラーが発生しました",
+    "description": "予期しないエラーが発生しました。もう一度お試しいただくか、しばらくしてから再度アクセスしてください。",
+    "retry": "再試行",
+    "notFoundTitle": "ページが見つかりません",
+    "notFoundDescription": "お探しのページは存在しないか、移動されました。",
+    "backHome": "ホームに戻る"
   }
 }
