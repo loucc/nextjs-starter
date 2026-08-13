@@ -1,20 +1,25 @@
 import { unsubscribeFromNewsletter } from "@/actions/newsletter";
+import { Locale } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default async function UnsubscribePage(props: {
   searchParams: SearchParams;
+  params: Promise<{ locale: string }>;
 }) {
   let status: "error" | "success" = "error";
   let email = "";
-  let errorMessage =
-    "An error occurred while processing your unsubscribe request";
+  let errorMessage = "";
+
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale: locale as Locale, namespace: "Unsubscribe" });
 
   const searchParams = await props.searchParams;
   const token = searchParams.token as string;
 
   if (!token) {
-    errorMessage = "No unsubscribe token provided";
+    errorMessage = t("errorHint");
   } else {
     try {
       const result = await unsubscribeFromNewsletter(token);
@@ -23,31 +28,26 @@ export default async function UnsubscribePage(props: {
         email = result.email;
       }
     } catch (error) {
-      errorMessage = error instanceof Error ? error.message : errorMessage;
+      errorMessage = error instanceof Error ? error.message : t("errorHint");
     }
   }
 
   return (
     <div className="max-w-md mx-auto my-16 p-6 rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-6">Email Subscription Management</h1>
+      <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
 
       {status === "success" ? (
         <div>
-          <p className="mb-4">
-            You have successfully unsubscribed from the email notifications.
+          <p className="mb-4">{t("success")}</p>
+          <p className="text-sm text-gray-600">
+            {t("emailLabel")}: {email}
           </p>
-          <p className="text-sm text-gray-600">Email: {email}</p>
-          <p className="mt-6">
-            If you change your mind, you can re-subscribe at any time.
-          </p>
+          <p className="mt-6">{t("resubscribe")}</p>
         </div>
       ) : (
         <div>
           <p className="text-red-600 mb-4">{errorMessage}</p>
-          <p>
-            Please ensure you used the correct unsubscribe link, or contact our
-            support team for help.
-          </p>
+          <p>{t("errorHint")}</p>
         </div>
       )}
     </div>

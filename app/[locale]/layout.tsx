@@ -2,6 +2,8 @@ import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAdsense from "@/app/GoogleAdsense";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
 import PlausibleAnalytics from "@/app/PlausibleAnalytics";
+import AnalyticsGate from "@/components/AnalyticsGate";
+import CookieConsent from "@/components/CookieConsent";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { LanguageDetectionAlert } from "@/components/LanguageDetectionAlert";
@@ -88,6 +90,7 @@ export default async function LocaleLayout({
             </main>
 
             {messages.Footer && <Footer />}
+            {messages.CookieConsent && <CookieConsent />}
           </ThemeProvider>
         </NextIntlClientProvider>
         <TailwindIndicator />
@@ -96,11 +99,14 @@ export default async function LocaleLayout({
         ) : (
           <>
             {/* Vercel Analytics removed (not meaningful on Cloudflare) —
-                Cloudflare Web Analytics is planned (see biz.md P1). */}
-            <BaiDuAnalytics />
-            <GoogleAnalytics />
-            <GoogleAdsense />
-            <PlausibleAnalytics />
+                Cloudflare Web Analytics is planned (see biz.md P1).
+                All scripts are gated on cookie consent (AnalyticsGate). */}
+            <AnalyticsGate>
+              <BaiDuAnalytics />
+              <GoogleAnalytics />
+              <GoogleAdsense />
+              <PlausibleAnalytics />
+            </AnalyticsGate>
           </>
         )}
       </body>

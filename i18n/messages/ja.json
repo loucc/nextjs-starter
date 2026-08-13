@@ -106,7 +106,8 @@
       "errorMessage2": "登録に失敗しました。少し待ってから再試行してください。",
       "subscribe": "登録する",
       "subscribing": "登録中...",
-      "subscribed": "登録が完了しました。ありがとうございます。"
+      "subscribed": "登録が完了しました。ありがとうございます。",
+      "turnstileRequired": "セキュリティ確認を完了してください"
     }
   },
   "Home": {
@@ -145,6 +146,21 @@
     "submit": "製品を提出",
     "submitting": "送信中...",
     "successMessage": "ありがとうございます！提出を受け付けました。まもなく確認いたします。",
-    "errorMessage": "エラーが発生しました。もう一度お試しください。"
+    "errorMessage": "エラーが発生しました。もう一度お試しください。",
+    "turnstileRequired": "送信前にセキュリティ確認を完了してください"
+  },
+  "CookieConsent": {
+    "title": "Cookie の使用について",
+    "description": "当サイトは機能に必要な Cookie に加え、同意いただいた場合のみ分析・広告 Cookie を使用します。すべてを受け入れるか、必要なものだけに限定するかを選択できます。",
+    "accept": "すべて受け入れる",
+    "decline": "必要なもののみ",
+    "privacyPolicyLink": "プライバシーポリシー"
+  },
+  "Unsubscribe": {
+    "title": "メール購読の管理",
+    "success": "メール通知の購読を解除しました。",
+    "emailLabel": "メールアドレス",
+    "resubscribe": "気が変わった場合は、いつでも再登録できます。",
+    "errorHint": "退会リンクが正しいことをご確認いただくか、サポートチームまでお問い合わせください。"
   }
 }

@@ -106,7 +106,8 @@
       "errorMessage2": "订阅失败，请稍后再试",
       "subscribe": "订阅",
       "subscribing": "订阅中",
-      "subscribed": "订阅成功！感谢您的关注。"
+      "subscribed": "订阅成功！感谢您的关注。",
+      "turnstileRequired": "请先完成安全验证"
     }
   },
   "Home": {
@@ -145,6 +146,21 @@
     "submit": "提交产品",
     "submitting": "提交中...",
     "successMessage": "感谢您的提交！我们会尽快审核。",
-    "errorMessage": "出了点问题，请重试。"
+    "errorMessage": "出了点问题，请重试。",
+    "turnstileRequired": "提交前请先完成安全验证"
+  },
+  "CookieConsent": {
+    "title": "我们使用 Cookie",
+    "description": "本站使用必要的 Cookie 以保证网站功能,并在您同意的情况下使用分析和广告 Cookie。您可以选择接受全部或仅使用必要的 Cookie。",
+    "accept": "接受全部",
+    "decline": "仅必要 Cookie",
+    "privacyPolicyLink": "隐私政策"
+  },
+  "Unsubscribe": {
+    "title": "邮件订阅管理",
+    "success": "您已成功退订邮件通知。",
+    "emailLabel": "邮箱",
+    "resubscribe": "如果您改变主意,可以随时重新订阅。",
+    "errorHint": "请确认您使用的退订链接正确,或联系我们的支持团队寻求帮助。"
   }
 }

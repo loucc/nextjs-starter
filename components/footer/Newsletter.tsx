@@ -1,10 +1,15 @@
 "use client";
 
+import TurnstileWidget, {
+  TurnstileWidgetHandle,
+} from "@/components/TurnstileWidget";
 import { Button } from "@/components/ui/button";
 import { normalizeEmail, validateEmail } from "@/lib/email";
 import { Send } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
@@ -12,8 +17,16 @@ export function Newsletter() {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
 
   const t = useTranslations("Footer.Newsletter");
+
+  const showError = (message: string) => {
+    setSubscribeStatus("error");
+    setErrorMessage(message);
+    setTimeout(() => setSubscribeStatus("idle"), 5000);
+  };
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,9 +36,12 @@ export function Newsletter() {
     const { isValid, error } = validateEmail(normalizedEmailAddress);
 
     if (!isValid) {
-      setSubscribeStatus("error");
-      setErrorMessage(error || t("defaultErrorMessage"));
-      setTimeout(() => setSubscribeStatus("idle"), 5000);
+      showError(error || t("defaultErrorMessage"));
+      return;
+    }
+
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      showError(t("turnstileRequired"));
       return;
     }
 
@@ -35,7 +51,10 @@ export function Newsletter() {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: normalizedEmailAddress }),
+        body: JSON.stringify({
+          email: normalizedEmailAddress,
+          turnstileToken,
+        }),
       });
 
       const data = await response.json();
@@ -47,13 +66,13 @@ export function Newsletter() {
       setSubscribeStatus("success");
       setEmail("");
       setErrorMessage("");
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
       setTimeout(() => setSubscribeStatus("idle"), 5000);
     } catch (error) {
-      setSubscribeStatus("error");
-      setErrorMessage(
+      showError(
         error instanceof Error ? error.message : t("errorMessage2")
       );
-      setTimeout(() => setSubscribeStatus("idle"), 5000);
     }
   };
   return (
@@ -72,6 +91,11 @@ export function Newsletter() {
             disabled={subscribeStatus === "loading"}
           />
         </div>
+        <TurnstileWidget
+          ref={turnstileRef}
+          onToken={setTurnstileToken}
+          theme="auto"
+        />
         <Button type="submit" disabled={subscribeStatus === "loading"}>
           {subscribeStatus === "loading" ? (
             t("subscribing")

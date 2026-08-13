@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/config/site';
 import { sendEmail as sendEmailUniversal } from '@/lib/mailer';
+import { signUnsubscribeToken } from '@/lib/unsubscribeToken';
 import {
   addContactToAudience as addContactUniversal,
   removeContactFromAudience as removeContactUniversal,
@@ -30,8 +31,8 @@ export async function sendEmail({
 
     const from = `${siteConfig.name} <${process.env.ADMIN_EMAIL}>`;
 
-    // Build unsubscribe link for email headers
-    const unsubscribeToken = Buffer.from(email).toString('base64');
+    // Build unsubscribe link for email headers (signed token, 30-day expiry)
+    const unsubscribeToken = await signUnsubscribeToken(email);
     const unsubscribeLink = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe?token=${unsubscribeToken}`;
 
     // Handle React template: support component type or rendered element

@@ -2,6 +2,11 @@ import { siteConfig } from '@/config/site';
 import { NewsletterWelcomeEmail } from '@/emails/newsletter-welcome';
 import { normalizeEmail, validateEmail } from '@/lib/email';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { verifyTurnstileToken } from '@/lib/turnstile';
+import {
+  signUnsubscribeToken,
+  verifyUnsubscribeToken as verifyToken,
+} from '@/lib/unsubscribeToken';
 import {
   addContactToAudience,
   getContactsFromAudience,
@@ -9,9 +14,13 @@ import {
   sendEmail,
 } from '../resend';
 
-export async function subscribeToNewsletter(email: string) {
+export async function subscribeToNewsletter(
+  email: string,
+  turnstileToken?: string | null
+) {
   try {
     await checkRateLimit();
+    await verifyTurnstileToken(turnstileToken);
 
     const normalizedEmail = normalizeEmail(email);
     const { isValid, error } = validateEmail(normalizedEmail);
@@ -23,8 +32,8 @@ export async function subscribeToNewsletter(email: string) {
     // Add to audience
     await addContactToAudience(normalizedEmail);
 
-    // Build unsubscribe link
-    const unsubscribeToken = Buffer.from(normalizedEmail).toString('base64');
+    // Build unsubscribe link (signed token, 30-day expiry)
+    const unsubscribeToken = await signUnsubscribeToken(normalizedEmail);
     const unsubscribeLink = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe?token=${unsubscribeToken}`;
 
     // Send welcome email
@@ -49,7 +58,7 @@ export async function unsubscribeFromNewsletter(token: string) {
   try {
     await checkRateLimit();
 
-    const email = Buffer.from(token, 'base64').toString();
+    const email = await verifyToken(token);
     const normalizedEmail = normalizeEmail(email);
     const { isValid, error } = validateEmail(normalizedEmail);
 

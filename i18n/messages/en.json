@@ -106,7 +106,8 @@
       "errorMessage2": "Subscription failed. Please try again later.",
       "subscribe": "Subscribe",
       "subscribing": "Subscribing...",
-      "subscribed": "Subscription successful! Thank you for your attention."
+      "subscribed": "Subscription successful! Thank you for your attention.",
+      "turnstileRequired": "Please complete the security check"
     }
   },
   "Home": {
@@ -145,6 +146,21 @@
     "submit": "Submit Product",
     "submitting": "Submitting...",
     "successMessage": "Thank you! Your submission has been received. We'll review it shortly.",
-    "errorMessage": "Something went wrong. Please try again."
+    "errorMessage": "Something went wrong. Please try again.",
+    "turnstileRequired": "Please complete the security check before submitting"
+  },
+  "CookieConsent": {
+    "title": "We use cookies",
+    "description": "We use essential cookies for site functionality and, with your consent, analytics and advertising cookies. You can accept all or only essential cookies.",
+    "accept": "Accept all",
+    "decline": "Essential only",
+    "privacyPolicyLink": "Privacy Policy"
+  },
+  "Unsubscribe": {
+    "title": "Email Subscription Management",
+    "success": "You have successfully unsubscribed from the email notifications.",
+    "emailLabel": "Email",
+    "resubscribe": "If you change your mind, you can re-subscribe at any time.",
+    "errorHint": "Please ensure you used the correct unsubscribe link, or contact our support team for help."
   }
 }

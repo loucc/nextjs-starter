@@ -1,6 +1,9 @@
 "use client";
 
 import { submitProduct } from "@/actions/submission";
+import TurnstileWidget, {
+  TurnstileWidgetHandle,
+} from "@/components/TurnstileWidget";
 import { Button } from "@/components/ui/button";
 import {
   AlertCircleIcon,
@@ -10,20 +13,35 @@ import {
   Send,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function ProductSubmission() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+  const turnstileInputRef = useRef<HTMLInputElement>(null);
 
   const t = useTranslations("Submission");
+
+  const showError = (message: string) => {
+    setStatus("error");
+    setErrorMessage(message);
+    setTimeout(() => setStatus("idle"), 5000);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    if (TURNSTILE_SITE_KEY && !turnstileInputRef.current?.value) {
+      showError(t("turnstileRequired"));
+      return;
+    }
 
     try {
       setStatus("loading");
@@ -37,13 +55,12 @@ export default function ProductSubmission() {
 
       setStatus("success");
       form.reset();
+      turnstileRef.current?.reset();
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
-      setStatus("error");
-      setErrorMessage(
+      showError(
         error instanceof Error ? error.message : t("errorMessage")
       );
-      setTimeout(() => setStatus("idle"), 5000);
     }
   };
 
@@ -94,6 +111,20 @@ export default function ProductSubmission() {
                     disabled={status === "loading"}
                   />
                 </div>
+                <TurnstileWidget
+                  ref={turnstileRef}
+                  onToken={(token) => {
+                    if (turnstileInputRef.current) {
+                      turnstileInputRef.current.value = token || "";
+                    }
+                  }}
+                  theme="light"
+                />
+                <input
+                  type="hidden"
+                  name="cf-turnstile-response"
+                  ref={turnstileInputRef}
+                />
                 <Button
                   type="submit"
                   disabled={status === "loading"}

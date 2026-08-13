@@ -3,11 +3,15 @@
 import { siteConfig } from '@/config/site';
 import { SubmissionNotificationEmail } from '@/emails/submission-notification';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { verifyTurnstileToken } from '@/lib/turnstile';
 import { sendEmail } from '../resend';
 
 export async function submitProduct(formData: FormData) {
   try {
     await checkRateLimit();
+    await verifyTurnstileToken(
+      formData.get('cf-turnstile-response') as string | null
+    );
 
     const productUrl = formData.get('productUrl') as string;
 

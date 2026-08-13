@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email, turnstileToken } = await request.json();
 
     if (!email) {
       return NextResponse.json(
@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = await subscribeToNewsletter(email);
+    const result = await subscribeToNewsletter(email, turnstileToken);
     return NextResponse.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Server processing request failed';

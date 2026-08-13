@@ -18,3 +18,10 @@ CLOUDFLARE_API_TOKEN=
 UPSTASH_REDIS_REST_URL=
 UPSTASH_REDIS_REST_TOKEN=
 DAY_MAX_SUBMISSIONS=10
+
+# Cloudflare Turnstile (server secret; sitekey is build-time NEXT_PUBLIC_*)
+# Test secret (always pass): 1x0000000000000000000000000000000AA
+TURNSTILE_SECRET_KEY=
+
+# Secret for signing unsubscribe tokens (long random string in production)
+UNSUBSCRIBE_SECRET=

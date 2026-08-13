@@ -81,7 +81,7 @@
 
 ## 五、建议实施顺序
 
-> **2026-08-13 进度:① OpenNext/Cloudflare 部署打通已完成**(Next 16.3 + @opennextjs/cloudflare 1.20,MDX 构建期编译,Tailwind 4,本地 workerd 预览全路由 200)。真实部署仍需 Cloudflare API Token(见 wrangler.toml / CI secrets)。
+> **2026-08-13 进度:① 部署打通 ✅,② 合规底线 ✅**(Turnstile 表单验证、Cookie 同意横幅+分析脚本门控、安全响应头+CSP、退订 token HMAC+30 天过期)。③ D1 数据层待开始。(Next 16.3 + @opennextjs/cloudflare 1.20,MDX 构建期编译,Tailwind 4,本地 workerd 预览全路由 200)。真实部署仍需 Cloudflare API Token(见 wrangler.toml / CI secrets)。
 
 1. **① OpenNext/Cloudflare 部署打通** + logger 改造 + CI(先跑起来)
 2. **② 合规底线**:Turnstile + 安全头 + token 签名 + Cookie 同意
