@@ -9,14 +9,18 @@ compatibility_flags = ["nodejs_compat"]
 
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
+# D1 (SQLite) — submissions / waitlist / showcase data.
+# Local dev uses preview_database_id (no login / real id required).
+# For production: create the database in the Cloudflare dashboard and
+# replace database_id with the real UUID, then run `pnpm db:migrate:remote`.
+[[d1_databases]]
+binding = "DB"
+database_name = "nextjs-starter"
+database_id = "00000000-0000-0000-0000-000000000000"
+preview_database_id = "local-db"
+
 # ---------------------------------------------------------------------------
 # Future phases (see biz.md):
-#
-# D1 (SQLite) — submissions / waitlist / showcase data
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "<name>"
-# database_id = "<id>"
 #
 # R2 (object storage) — uploads, blog images, downloads
 # [[r2_buckets]]

@@ -1,7 +1,13 @@
 import createNextIntlPlugin from "next-intl/plugin";
 import createMDX from "@next/mdx";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const withNextIntl = createNextIntlPlugin();
+
+// Makes `next dev` aware of Cloudflare bindings (D1/R2/KV in wrangler.toml)
+// via the wrangler platform proxy — getCloudflareContext() and lib/db.ts
+// then work in local dev. Self-gates: no-op outside of development.
+initOpenNextCloudflareForDev();
 
 // Compile .mdx files to React components at BUILD time. Required because
 // Cloudflare Workers forbids eval/new Function, so runtime MDX compilation

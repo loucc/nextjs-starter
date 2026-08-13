@@ -208,9 +208,19 @@ pnpm start
 
 1. Cloudflare アカウント:**Workers Scripts: Edit** 権限の API Token を作成し
    (ダッシュボード → マイプロフィール → API Tokens)、Account ID を控えてください。
-2. Worker のランタイム環境変数は `.dev.vars.example` を参照:シークレットは
+2. D1 データベース(submissions / waitlist / showcase 用):ダッシュボード
+   (Workers & Pages → D1 SQL)で作成し、`wrangler.toml` の `database_id` を実際の
+   UUID に置き換えます。
+3. Worker のランタイム環境変数は `.dev.vars.example` を参照:シークレットは
    `pnpm dlx wrangler secret put <NAME>`、非シークレット値は `wrangler.toml` の
    `[vars]` に設定します。
+
+**D1 マイグレーション:**
+
+```bash
+pnpm db:migrate:local   # migrations/ をローカル SQLite(.wrangler/state)に適用
+pnpm db:migrate:remote  # migrations/ を本番 D1 データベースに適用
+```
 
 **ローカルプレビュー(workerd ランタイム):**
 

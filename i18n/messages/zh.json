@@ -162,5 +162,17 @@
     "emailLabel": "邮箱",
     "resubscribe": "如果您改变主意,可以随时重新订阅。",
     "errorHint": "请确认您使用的退订链接正确,或联系我们的支持团队寻求帮助。"
+  },
+  "Waitlist": {
+    "badge": "抢先体验",
+    "title": "加入等待名单",
+    "description": "第一时间获取发布通知。不发垃圾邮件,只有产品动态。",
+    "emailLabel": "邮箱地址",
+    "join": "加入等待名单",
+    "joining": "提交中...",
+    "joined": "您已在名单中!我们会尽快与您联系。",
+    "alreadyJoined": "该邮箱已在等待名单中。",
+    "errorMessage": "出了点问题,请重试。",
+    "turnstileRequired": "请先完成安全验证"
   }
 }

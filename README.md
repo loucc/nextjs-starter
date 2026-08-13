@@ -210,9 +210,19 @@ The project is wired for [Cloudflare Workers](https://developers.cloudflare.com/
 
 1. A Cloudflare account. Create an API token with **Workers Scripts: Edit** permission
    (Dashboard → My Profile → API Tokens) and note your Account ID.
-2. Configure runtime env vars for the Worker (see `.dev.vars.example`): set them as
+2. A D1 database for submissions / waitlist / showcase: create it in the dashboard
+   (Workers & Pages → D1 SQL), then replace `database_id` in `wrangler.toml` with
+   the real UUID.
+3. Configure runtime env vars for the Worker (see `.dev.vars.example`): set them as
    wrangler secrets with `pnpm dlx wrangler secret put <NAME>` for secrets, or in
    `wrangler.toml` `[vars]` for non-secret values.
+
+**D1 migrations:**
+
+```bash
+pnpm db:migrate:local   # applies migrations/ to the local SQLite (.wrangler/state)
+pnpm db:migrate:remote  # applies migrations/ to the production D1 database
+```
 
 **Local preview (workerd runtime):**
 

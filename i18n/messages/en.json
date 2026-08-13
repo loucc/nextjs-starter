@@ -162,5 +162,17 @@
     "emailLabel": "Email",
     "resubscribe": "If you change your mind, you can re-subscribe at any time.",
     "errorHint": "Please ensure you used the correct unsubscribe link, or contact our support team for help."
+  },
+  "Waitlist": {
+    "badge": "Early Access",
+    "title": "Join the Waitlist",
+    "description": "Be the first to know when we launch. No spam — just product updates.",
+    "emailLabel": "Email address",
+    "join": "Join the waitlist",
+    "joining": "Joining...",
+    "joined": "You're on the list! We'll be in touch soon.",
+    "alreadyJoined": "This email is already on the waitlist.",
+    "errorMessage": "Something went wrong. Please try again.",
+    "turnstileRequired": "Please complete the security check"
   }
 }

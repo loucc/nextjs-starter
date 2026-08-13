@@ -1,80 +1,15 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { getShowcaseItems } from "@/lib/showcase";
 import { ArrowUpRightIcon, Trophy } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 
-interface ShowcaseItem {
-  name: string;
-  url: string;
-}
-
-// Hardcoded showcase data - add your products here
-const showcaseItems: ShowcaseItem[] = [
-  {
-    name: "Happy Horse 2",
-    url: "https://happyhorse2.com/",
-  },
-  {
-    name: "Hubble Birthday",
-    url: "https://hubblebirthday.com/",
-  },
-  {
-    name: "vget",
-    url: "https://www.vget.io/",
-  },
-  {
-    name: "submitnow",
-    url: "https://www.submitnow.dev/",
-  },
-  {
-    name: "OG Image Generator",
-    url: "https://myogimage.com",
-  },
-  {
-    name: "Black's Screen",
-    url: "https://www.blacksscreen.com/",
-  },
-  {
-    name: "Pinpoint Answer",
-    url: "https://pinpointanswer.today/",
-  },
-  {
-    name: "Dead Pixel Test",
-    url: "https://deadpixelstest.com/",
-  },
-  {
-    name: "Ouke Machinery",
-    url: "https://www.oukemac.com/",
-  },
-  {
-    name: "Ouke Machinery",
-    url: "https://oukepoultry.com/",
-  },
-  {
-    name: "Robot Apex",
-    url: "https://ai-apex.top/",
-  },
-  {
-    name: "PicArt - Online Puzzle Tool",
-    url: "https://www.puzzletool.online/",
-  },
-  {
-    name: "Escape From Duckov Wiki",
-    url: "https://www.escapefromduckov.io/",
-  },
-  {
-    name: "FileMerges",
-    url: "https://filemerges.net/",
-  },
-  {
-    name: "Khuzama Valley Investment",
-    url: "https://khuzamainv.com/",
-  },
-];
-
-export default function Showcase() {
-  const t = useTranslations("Showcase");
-  const locale = useLocale();
+export default async function Showcase() {
+  // Async server component: must use the async next-intl APIs
+  // (getLocale/getTranslations) — the sync hooks break in async components.
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "Showcase" });
+  const showcaseItems = await getShowcaseItems();
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">

@@ -44,3 +44,12 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: pnpm deploy:worker
+      # Apply D1 migrations to the production database after deploy.
+      # Enable this once a real D1 database exists: create it in the
+      # Cloudflare dashboard, replace database_id in wrangler.toml, then
+      # uncomment (the same API token needs D1: Edit permission):
+      # - name: Apply D1 migrations
+      #   env:
+      #     CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #   run: pnpm db:migrate:remote

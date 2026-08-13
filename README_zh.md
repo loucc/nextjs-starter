@@ -207,7 +207,15 @@ pnpm start
 **前置条件:**
 
 1. Cloudflare 账号:创建具有 **Workers Scripts: Edit** 权限的 API Token(控制台 → 我的个人资料 → API Tokens),并记录 Account ID。
-2. Worker 运行时环境变量见 `.dev.vars.example`:密钥用 `pnpm dlx wrangler secret put <NAME>` 配置,非敏感变量写在 `wrangler.toml` 的 `[vars]` 中。
+2. D1 数据库(submission / waitlist / showcase 数据):在控制台(Workers & Pages → D1 SQL)创建,并将 `wrangler.toml` 中的 `database_id` 替换为真实 UUID。
+3. Worker 运行时环境变量见 `.dev.vars.example`:密钥用 `pnpm dlx wrangler secret put <NAME>` 配置,非敏感变量写在 `wrangler.toml` 的 `[vars]` 中。
+
+**D1 迁移:**
+
+```bash
+pnpm db:migrate:local   # 将 migrations/ 应用到本地 SQLite(.wrangler/state)
+pnpm db:migrate:remote  # 将 migrations/ 应用到生产 D1 数据库
+```
 
 **本地预览(workerd 运行时):**
 
