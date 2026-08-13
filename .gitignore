@@ -131,3 +131,10 @@ dist
 # sitemap
 */sitemap*.xml
 */robots.txt
+# Cloudflare / OpenNext
+.open-next/
+.wrangler/
+.dev.vars
+
+# Local logs (winston was removed; keep the dir ignored anyway)
+log/

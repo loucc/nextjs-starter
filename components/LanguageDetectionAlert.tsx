@@ -44,9 +44,13 @@ export function LanguageDetectionAlert() {
       }
 
       if (supportedLang && supportedLang !== locale) {
-        setDetectedLocale(supportedLang);
-        setShowLanguageAlert(true);
-        setTimeout(() => setIsVisible(true), 100);
+        // Defer state updates to the existing transition timeout so no state
+        // is set synchronously inside the effect (react-hooks/set-state-in-effect).
+        setTimeout(() => {
+          setDetectedLocale(supportedLang);
+          setShowLanguageAlert(true);
+          setIsVisible(true);
+        }, 100);
       }
     }
   }, [locale, getLangAlertDismissed, setShowLanguageAlert]);
@@ -67,7 +71,13 @@ export function LanguageDetectionAlert() {
 
   useEffect(() => {
     if (countdown === 0 && showLanguageAlert) {
-      handleDismiss();
+      // Defer so no state is set synchronously inside the effect
+      // (react-hooks/set-state-in-effect).
+      const timer = setTimeout(() => {
+        handleDismiss();
+      }, 0);
+
+      return () => clearTimeout(timer);
     }
   }, [countdown, showLanguageAlert, handleDismiss]);
 

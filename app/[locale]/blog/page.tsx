@@ -1,6 +1,6 @@
 import { BlogCard } from "@/app/[locale]/blog/BlogCard";
 import { Locale, LOCALES } from "@/i18n/routing";
-import { getPosts } from "@/lib/getBlogs";
+import { getPosts } from "@/lib/content";
 import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";

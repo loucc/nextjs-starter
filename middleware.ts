@@ -1,6 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 
+// NOTE: kept as middleware.ts (edge runtime) instead of Next 16's proxy.ts
+// because @opennextjs/cloudflare does not support Node.js middleware yet.
+// See https://github.com/opennextjs/opennextjs-cloudflare/issues/962
 export default createMiddleware(routing);
 
 export const config = {

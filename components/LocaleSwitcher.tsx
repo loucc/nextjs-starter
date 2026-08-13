@@ -18,7 +18,7 @@ import { useLocaleStore } from "@/stores/localeStore";
 import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useSyncExternalStore, useTransition } from "react";
 
 export default function LocaleSwitcher() {
   const router = useRouter();
@@ -27,11 +27,12 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const { dismissLanguageAlert } = useLocaleStore();
   const [, startTransition] = useTransition();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // hydration-safe "mounted" flag: false during SSR, true after hydration
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   function onSelectChange(nextLocale: Locale) {
     dismissLanguageAlert();

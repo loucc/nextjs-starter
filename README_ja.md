@@ -198,6 +198,37 @@ pnpm build
 pnpm start
 ```
 
+### Cloudflare Workers へのデプロイ
+
+本プロジェクトは [OpenNext アダプター](https://opennext.js.org/cloudflare) 経由で
+[Cloudflare Workers](https://developers.cloudflare.com/workers/) に対応しています
+(`wrangler.toml` + `open-next.config.ts`)。
+
+**前提条件:**
+
+1. Cloudflare アカウント:**Workers Scripts: Edit** 権限の API Token を作成し
+   (ダッシュボード → マイプロフィール → API Tokens)、Account ID を控えてください。
+2. Worker のランタイム環境変数は `.dev.vars.example` を参照:シークレットは
+   `pnpm dlx wrangler secret put <NAME>`、非シークレット値は `wrangler.toml` の
+   `[vars]` に設定します。
+
+**ローカルプレビュー(workerd ランタイム):**
+
+```bash
+pnpm build:worker   # next build + OpenNext 変換(出力: .open-next/)
+pnpm preview:worker # ビルド成果物に対する wrangler dev
+```
+
+**デプロイ:**
+
+```bash
+pnpm deploy:worker  # ビルド + wrangler deploy
+```
+
+または `main` ブランチへ push:`.github/workflows/deploy.yml` が自動で lint・ビルド・
+デプロイを実行します。事前にリポジトリの secrets として `CLOUDFLARE_API_TOKEN` と
+`CLOUDFLARE_ACCOUNT_ID` を追加してください。
+
 ## 💡 開発のベストプラクティス
 
 ### パッケージマネージャー使用

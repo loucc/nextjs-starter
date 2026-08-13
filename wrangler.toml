@@ -1,0 +1,30 @@
+# Cloudflare Workers configuration for the OpenNext adapter.
+# See: https://opennext.js.org/cloudflare
+name = "nextjs-starter"
+main = ".open-next/worker.js"
+
+compatibility_date = "2024-09-23"
+# nodejs_compat: Node.js APIs (Buffer, node:stream for @react-email/render, ...)
+compatibility_flags = ["nodejs_compat"]
+
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+# ---------------------------------------------------------------------------
+# Future phases (see biz.md):
+#
+# D1 (SQLite) — submissions / waitlist / showcase data
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "<name>"
+# database_id = "<id>"
+#
+# R2 (object storage) — uploads, blog images, downloads
+# [[r2_buckets]]
+# binding = "BUCKET"
+# bucket_name = "<name>"
+#
+# KV (incremental cache for ISR, when enabled in open-next.config.ts)
+# [[kv_namespaces]]
+# binding = "NEXT_CACHE_WORKERS_KV"
+# id = "<id>"
+# ---------------------------------------------------------------------------

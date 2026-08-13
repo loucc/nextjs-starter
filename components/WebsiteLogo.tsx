@@ -31,6 +31,18 @@ const WebsiteLogo = ({
     `https://${domain}/favicon.ico`,
   ];
 
+  const handleError = () => {
+    const nextIndex = fallbackIndex + 1;
+    if (nextIndex < fallbackSources.length) {
+      setFallbackIndex(nextIndex);
+      setImgSrc(fallbackSources[nextIndex]);
+      setIsLoading(true);
+    } else {
+      setHasError(true);
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     let timeoutId: any;
 
@@ -45,19 +57,8 @@ const WebsiteLogo = ({
         clearTimeout(timeoutId);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imgSrc, isLoading]);
-
-  const handleError = () => {
-    const nextIndex = fallbackIndex + 1;
-    if (nextIndex < fallbackSources.length) {
-      setFallbackIndex(nextIndex);
-      setImgSrc(fallbackSources[nextIndex]);
-      setIsLoading(true);
-    } else {
-      setHasError(true);
-      setIsLoading(false);
-    }
-  };
 
   const handleLoad = () => {
     setIsLoading(false);

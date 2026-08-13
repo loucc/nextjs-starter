@@ -12,7 +12,6 @@ import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
-import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
@@ -96,7 +95,8 @@ export default async function LocaleLayout({
           <></>
         ) : (
           <>
-            <Analytics />
+            {/* Vercel Analytics removed (not meaningful on Cloudflare) —
+                Cloudflare Web Analytics is planned (see biz.md P1). */}
             <BaiDuAnalytics />
             <GoogleAnalytics />
             <GoogleAdsense />

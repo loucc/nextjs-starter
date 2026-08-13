@@ -201,6 +201,36 @@ pnpm build
 pnpm start
 ```
 
+### Manual Deployment to Cloudflare Workers
+
+The project is wired for [Cloudflare Workers](https://developers.cloudflare.com/workers/) via the
+[OpenNext adapter](https://opennext.js.org/cloudflare) (`wrangler.toml` + `open-next.config.ts`).
+
+**Prerequisites:**
+
+1. A Cloudflare account. Create an API token with **Workers Scripts: Edit** permission
+   (Dashboard → My Profile → API Tokens) and note your Account ID.
+2. Configure runtime env vars for the Worker (see `.dev.vars.example`): set them as
+   wrangler secrets with `pnpm dlx wrangler secret put <NAME>` for secrets, or in
+   `wrangler.toml` `[vars]` for non-secret values.
+
+**Local preview (workerd runtime):**
+
+```bash
+pnpm build:worker   # next build + OpenNext transform into .open-next/
+pnpm preview:worker # wrangler dev against the built worker
+```
+
+**Deploy:**
+
+```bash
+pnpm deploy:worker  # build + wrangler deploy
+```
+
+Or push to `main` — the GitHub Actions workflow in `.github/workflows/deploy.yml` builds,
+lints and deploys automatically. Add repo secrets `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID` first.
+
 ## 💡 Development Best Practices
 
 ### Package Manager

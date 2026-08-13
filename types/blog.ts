@@ -9,7 +9,8 @@ export type BlogPost = {
   date: Date
   visible?: 'draft' | 'invisible' | 'published'
   pin?: boolean
-  content: string
+  // Compiled MDX component (build-time compiled via @next/mdx — see lib/content.ts)
+  Component?: import('react').ComponentType
   metadata: {
     [key: string]: any
   },

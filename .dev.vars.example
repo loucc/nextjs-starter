@@ -1,0 +1,20 @@
+# Copy to .dev.vars for local wrangler dev / preview.
+# These are runtime env vars for the Worker — NEXT_PUBLIC_* vars are
+# build-time inlined and stay in .env(.local) instead.
+NEXTJS_ENV=development
+
+# Email provider: resend | cloudflare
+EMAIL_PROVIDER=resend
+ADMIN_EMAIL=
+
+# Resend (required when EMAIL_PROVIDER=resend)
+RESEND_API_KEY=
+
+# Cloudflare Email (required when EMAIL_PROVIDER=cloudflare)
+CLOUDFLARE_ACCOUNT_ID=
+CLOUDFLARE_API_TOKEN=
+
+# Upstash rate limiting / Redis audience fallback
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+DAY_MAX_SUBMISSIONS=10

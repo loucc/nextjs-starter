@@ -199,6 +199,32 @@ pnpm build
 pnpm start
 ```
 
+### 部署到 Cloudflare Workers
+
+项目已通过 [OpenNext 适配器](https://opennext.js.org/cloudflare) 接入
+[Cloudflare Workers](https://developers.cloudflare.com/workers/)(`wrangler.toml` + `open-next.config.ts`)。
+
+**前置条件:**
+
+1. Cloudflare 账号:创建具有 **Workers Scripts: Edit** 权限的 API Token(控制台 → 我的个人资料 → API Tokens),并记录 Account ID。
+2. Worker 运行时环境变量见 `.dev.vars.example`:密钥用 `pnpm dlx wrangler secret put <NAME>` 配置,非敏感变量写在 `wrangler.toml` 的 `[vars]` 中。
+
+**本地预览(workerd 运行时):**
+
+```bash
+pnpm build:worker   # next build + OpenNext 转换,产物在 .open-next/
+pnpm preview:worker # 基于构建产物的 wrangler dev
+```
+
+**部署:**
+
+```bash
+pnpm deploy:worker  # 构建 + wrangler deploy
+```
+
+或推送 `main` 分支:`.github/workflows/deploy.yml` 会自动 lint、构建并部署,
+需先在仓库添加 `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID` 两个 secrets。
+
 ## 💡 开发最佳实践
 
 ### 包管理器使用
