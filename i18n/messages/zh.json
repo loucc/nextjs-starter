@@ -72,7 +72,11 @@
     "title": "SerenAI",
     "tagLine": "你的 AI 情感伴侣",
     "Pricing": "价格",
-    "Changelog": "更新日志"
+    "Changelog": "更新日志",
+    "intro": "SerenAI 是你专属的 AI 情感伴侣——温柔、私密,在你需要平静的时刻,始终在线。",
+    "productTitle": "产品",
+    "supportTitle": "支持",
+    "contactUs": "联系我们"
   },
   "Home": {
     "title": "SerenAI",

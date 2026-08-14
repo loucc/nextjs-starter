@@ -72,7 +72,11 @@
     "title": "SerenAI",
     "tagLine": "あなたの AI 感情コンパニオン",
     "Pricing": "料金",
-    "Changelog": "更新履歴"
+    "Changelog": "更新履歴",
+    "intro": "SerenAI はあなた専用の AI 感情コンパニオン——やさしく、プライベートに、静かなひとときをいつでも。",
+    "productTitle": "製品",
+    "supportTitle": "サポート",
+    "contactUs": "お問い合わせ"
   },
   "Home": {
     "title": "SerenAI",

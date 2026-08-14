@@ -72,7 +72,11 @@
     "title": "SerenAI",
     "tagLine": "Your AI emotional companion",
     "Pricing": "Pricing",
-    "Changelog": "Changelog"
+    "Changelog": "Changelog",
+    "intro": "SerenAI is your dedicated AI emotional companion — gentle, private, and available whenever you need a calm moment.",
+    "productTitle": "Product",
+    "supportTitle": "Support",
+    "contactUs": "Contact us"
   },
   "Home": {
     "title": "SerenAI",
