@@ -138,3 +138,6 @@ dist
 
 # Local logs (winston was removed; keep the dir ignored anyway)
 log/
+
+# Test coverage
+coverage/
