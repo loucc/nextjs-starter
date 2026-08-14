@@ -8,22 +8,27 @@
   "Header": {
     "links": [
       {
-        "name": "博客",
+        "name": "首页",
+        "href": "/"
+      },
+      {
+        "name": "产品功能",
+        "href": "/features"
+      },
+      {
+        "name": "AI 技术",
+        "href": "/technology"
+      },
+      {
+        "name": "心理洞察",
         "href": "/blog"
       },
       {
-        "name": "关于",
+        "name": "关于我们",
         "href": "/about"
-      },
-      {
-        "name": "价格",
-        "href": "/pricing"
-      },
-      {
-        "name": "更新日志",
-        "href": "/changelog"
       }
-    ]
+    ],
+    "login": "登录 / 注册"
   },
   "Footer": {
     "Copyright": "版权所有 © {year} {name} 保留所有权利。",
@@ -65,7 +70,9 @@
       "turnstileRequired": "请先完成安全验证"
     },
     "title": "SerenAI",
-    "tagLine": "你的 AI 情感伴侣"
+    "tagLine": "你的 AI 情感伴侣",
+    "Pricing": "价格",
+    "Changelog": "更新日志"
   },
   "Home": {
     "title": "SerenAI",
@@ -203,5 +210,31 @@
     "description": "每一次更新与改进,尽收于此。跟随产品一起成长。",
     "subscribeHint": "保持关注 — 订阅",
     "rss": "RSS 订阅源"
+  },
+  "Technology": {
+    "title": "AI 技术",
+    "description": "SerenAI 的内核:先进的 AI 情绪识别技术,把对话变成真正的情感支持。",
+    "sections": [
+      {
+        "title": "情绪识别",
+        "description": "模型理解语气、语境与情绪线索——不只听懂你说什么,更懂得你的感受。"
+      },
+      {
+        "title": "个性化抚慰",
+        "description": "每一次回应都贴合你的情绪状态与历史——像懂你的人在陪伴。"
+      },
+      {
+        "title": "隐私为本",
+        "description": "对话只属于你。传输加密、最小化留存,绝不用你的私密时刻训练模型。"
+      },
+      {
+        "title": "全天候在线",
+        "description": "运行在全球边缘网络——毫秒级响应,任何时候、任何地方,平静的陪伴都在。"
+      }
+    ]
+  },
+  "Features": {
+    "title": "产品功能",
+    "description": "SerenAI 的每一项能力,都为了温柔而有效地帮助你疗愈。"
   }
 }

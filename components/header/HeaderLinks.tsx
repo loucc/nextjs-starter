@@ -3,7 +3,6 @@
 import { Link as I18nLink, usePathname } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { HeaderLink } from "@/types/common";
-import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const HeaderLinks = () => {
@@ -13,28 +12,27 @@ const HeaderLinks = () => {
   const headerLinks: HeaderLink[] = tHeader.raw("links");
 
   return (
-    <div className="hidden md:flex flex-row items-center gap-x-2 text-sm font-medium text-muted-500">
-      {headerLinks.map((link) => (
-        <I18nLink
-          key={link.name}
-          href={link.href}
-          title={link.name}
-          prefetch={link.target && link.target === "_blank" ? false : true}
-          target={link.target || "_self"}
-          rel={link.rel || undefined}
-          className={cn(
-            "rounded-xl px-4 py-2 flex items-center gap-x-1 hover:bg-accent-foreground/10 hover:text-accent-foreground",
-            pathname === link.href && "font-semibold text-accent-foreground"
-          )}
-        >
-          {link.name}
-          {link.target && link.target === "_blank" && (
-            <span className="text-xs">
-              <ExternalLink className="w-4 h-4" />
-            </span>
-          )}
-        </I18nLink>
-      ))}
+    <div className="hidden md:flex flex-row items-center gap-x-1">
+      {headerLinks.map((link) => {
+        const active = pathname === link.href;
+        return (
+          <I18nLink
+            key={link.name}
+            href={link.href}
+            title={link.name}
+            prefetch={true}
+            className={cn(
+              "rounded-full px-4 py-2 text-sm font-light tracking-wide transition-all duration-300",
+              "text-slate-600 dark:text-slate-300",
+              "hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-violet-500",
+              active &&
+                "bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-500 font-normal"
+            )}
+          >
+            {link.name}
+          </I18nLink>
+        );
+      })}
     </div>
   );
 };

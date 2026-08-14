@@ -31,22 +31,25 @@ export default function MobileMenu() {
         <DropdownMenuTrigger className="p-2">
           <Menu className="h-5 w-5" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-64">
+        <DropdownMenuContent
+          align="end"
+          className="w-64 rounded-2xl border-white/40 dark:border-white/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl"
+        >
           <DropdownMenuLabel>
             <I18nLink
               href="/"
               title={t("title")}
               prefetch={true}
-              className="flex items-center space-x-1 font-bold"
+              className="flex items-center gap-2 font-light tracking-wide"
             >
               <Image
                 alt={t("title")}
                 src="/logo.svg"
-                className="w-6 h-6"
-                width={32}
-                height={32}
+                className="w-7 h-7 rounded-lg"
+                width={28}
+                height={28}
               />
-              <span className="highlight-text">{t("title")}</span>
+              <span>{t("title")}</span>
             </I18nLink>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
@@ -56,16 +59,21 @@ export default function MobileMenu() {
                 <I18nLink
                   href={link.href}
                   title={link.name}
-                  prefetch={
-                    link.target && link.target === "_blank" ? false : true
-                  }
-                  target={link.target || "_self"}
-                  rel={link.rel || undefined}
+                  prefetch={true}
+                  className="font-light tracking-wide"
                 >
                   {link.name}
                 </I18nLink>
               </DropdownMenuItem>
             ))}
+            <DropdownMenuItem>
+              <span
+                className="w-full rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-1.5 text-center text-white"
+                aria-label={`${tHeader("login")} (coming soon)`}
+              >
+                {tHeader("login")}
+              </span>
+            </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

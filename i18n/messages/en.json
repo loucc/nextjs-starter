@@ -8,22 +8,27 @@
   "Header": {
     "links": [
       {
-        "name": "Blog",
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "Features",
+        "href": "/features"
+      },
+      {
+        "name": "Technology",
+        "href": "/technology"
+      },
+      {
+        "name": "Mental Insights",
         "href": "/blog"
       },
       {
         "name": "About",
         "href": "/about"
-      },
-      {
-        "name": "Pricing",
-        "href": "/pricing"
-      },
-      {
-        "name": "Changelog",
-        "href": "/changelog"
       }
-    ]
+    ],
+    "login": "Login / Sign up"
   },
   "Footer": {
     "Copyright": "Copyright © {year} {name} All rights reserved.",
@@ -65,7 +70,9 @@
       "turnstileRequired": "Please complete the security check"
     },
     "title": "SerenAI",
-    "tagLine": "Your AI emotional companion"
+    "tagLine": "Your AI emotional companion",
+    "Pricing": "Pricing",
+    "Changelog": "Changelog"
   },
   "Home": {
     "title": "SerenAI",
@@ -203,5 +210,31 @@
     "description": "Every update and improvement, in one place. Follow along as the product evolves.",
     "subscribeHint": "Stay up to date — subscribe to the",
     "rss": "RSS feed"
+  },
+  "Technology": {
+    "title": "AI Technology",
+    "description": "Under the hood of SerenAI: advanced AI emotion recognition that turns conversations into genuine emotional support.",
+    "sections": [
+      {
+        "title": "Emotion Recognition",
+        "description": "Our models read tone, context and emotional cues to understand not just what you say, but how you feel."
+      },
+      {
+        "title": "Personalized Comfort",
+        "description": "Every response adapts to your emotional state and history — care that feels like it knows you."
+      },
+      {
+        "title": "Private by Design",
+        "description": "Your conversations are yours. Encryption in transit, minimal retention, and no training on your private moments."
+      },
+      {
+        "title": "Always Available",
+        "description": "Runs on a global edge network — a calm presence that answers in milliseconds, any hour, anywhere."
+      }
+    ]
+  },
+  "Features": {
+    "title": "Features",
+    "description": "Everything SerenAI does, designed to help you heal — gently and effectively."
   }
 }

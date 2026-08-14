@@ -8,22 +8,27 @@
   "Header": {
     "links": [
       {
-        "name": "ブログ",
+        "name": "ホーム",
+        "href": "/"
+      },
+      {
+        "name": "機能",
+        "href": "/features"
+      },
+      {
+        "name": "AI 技術",
+        "href": "/technology"
+      },
+      {
+        "name": "心理インサイト",
         "href": "/blog"
       },
       {
-        "name": "サイトについて",
+        "name": "私たちについて",
         "href": "/about"
-      },
-      {
-        "name": "料金",
-        "href": "/pricing"
-      },
-      {
-        "name": "更新履歴",
-        "href": "/changelog"
       }
-    ]
+    ],
+    "login": "ログイン / 登録"
   },
   "Footer": {
     "Copyright": "Copyright © {year} {name} All rights reserved.",
@@ -65,7 +70,9 @@
       "turnstileRequired": "セキュリティ確認を完了してください"
     },
     "title": "SerenAI",
-    "tagLine": "あなたの AI 感情コンパニオン"
+    "tagLine": "あなたの AI 感情コンパニオン",
+    "Pricing": "料金",
+    "Changelog": "更新履歴"
   },
   "Home": {
     "title": "SerenAI",
@@ -203,5 +210,31 @@
     "description": "すべてのアップデートと改善を一か所に。製品の進化を追いかけよう。",
     "subscribeHint": "最新情報をお届け — 購読する",
     "rss": "RSS フィード"
+  },
+  "Technology": {
+    "title": "AI 技術",
+    "description": "SerenAI の核心:最先端の AI 感情認識技術が、会話を本当の心の支えに変えます。",
+    "sections": [
+      {
+        "title": "感情認識",
+        "description": "声の調子・文脈・感情の手がかりを読み取り、言葉だけでなく気持ちを理解します。"
+      },
+      {
+        "title": "パーソナライズされたケア",
+        "description": "すべての応答があなたの感情状態と履歴に寄り添う——あなたを知る人のようなケア。"
+      },
+      {
+        "title": "プライバシー設計",
+        "description": "会話はあなただけのもの。転送時の暗号化、最小限の保持、私的な瞬間で学習はしません。"
+      },
+      {
+        "title": "いつでもオンライン",
+        "description": "グローバルなエッジネットワーク上で稼働——ミリ秒単位の応答、いつでもどこでも。"
+      }
+    ]
+  },
+  "Features": {
+    "title": "機能",
+    "description": "SerenAI のすべての機能は、やさしく効果的に癒すために設計されています。"
   }
 }

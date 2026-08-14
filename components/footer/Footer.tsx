@@ -132,7 +132,23 @@ export default async function Footer() {
                 name: siteConfig.name,
               })}
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+              <I18nLink
+                href="/pricing"
+                title={tFooter("Pricing")}
+                prefetch={false}
+                className="text-gray-400 hover:text-white text-sm"
+              >
+                {tFooter("Pricing")}
+              </I18nLink>
+              <I18nLink
+                href="/changelog"
+                title={tFooter("Changelog")}
+                prefetch={false}
+                className="text-gray-400 hover:text-white text-sm"
+              >
+                {tFooter("Changelog")}
+              </I18nLink>
               <I18nLink
                 href="/privacy-policy"
                 title={tFooter("PrivacyPolicy")}

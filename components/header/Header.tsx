@@ -1,3 +1,5 @@
+"use client";
+
 import HeaderLinks from "@/components/header/HeaderLinks";
 import MobileMenu from "@/components/header/MobileMenu";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
@@ -9,38 +11,49 @@ import Image from "next/image";
 
 const Header = () => {
   const t = useTranslations("Home");
+  const tHeader = useTranslations("Header");
 
   return (
-    <header className="py-2 px-6 backdrop-blur-md sticky top-0 z-50">
-      <nav className="flex justify-between items-center w-full mx-auto">
-        <div className="flex items-center space-x-6 md:space-x-12">
-          <I18nLink
-            href="/"
-            prefetch={false}
-            className="flex items-center space-x-1 font-bold"
-          >
-            <Image
-              alt={siteConfig.name}
-              src="/logo.svg"
-              className="w-6 h-6"
-              width={32}
-              height={32}
-            />
-            <span className="text-gray-800 dark:text-gray-200">
-              {t("title")}
-            </span>
-          </I18nLink>
+    <header className="sticky top-3 z-50 px-4">
+      <nav className="mx-auto max-w-6xl flex items-center justify-between rounded-full border border-white/50 dark:border-white/10 bg-white/55 dark:bg-slate-900/40 backdrop-blur-xl shadow-lg shadow-blue-500/5 px-4 sm:px-6 py-2">
+        {/* Logo */}
+        <I18nLink
+          href="/"
+          prefetch={false}
+          className="flex items-center gap-2"
+          aria-label={siteConfig.name}
+        >
+          <Image
+            alt={siteConfig.name}
+            src="/logo.svg"
+            className="w-7 h-7 rounded-lg"
+            width={28}
+            height={28}
+          />
+          <span className="font-light tracking-[0.12em] text-slate-700 dark:text-slate-200">
+            {siteConfig.name}
+          </span>
+        </I18nLink>
+
+        {/* Desktop nav */}
+        <div className="hidden md:block">
           <HeaderLinks />
         </div>
 
-        <div className="flex items-center gap-x-2 md:gap-x-4 lg:gap-x-6 flex-1 justify-end">
-          {/* PC */}
-          <div className="hidden md:flex items-center gap-x-4">
-            <LocaleSwitcher />
-            <ThemeToggle />
-          </div>
-
-          {/* Mobile */}
+        {/* Right side */}
+        <div className="flex items-center gap-2 md:gap-3">
+          {/* Login / Sign up (coming soon with the auth feature) */}
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            title={tHeader("login")}
+            aria-label={`${tHeader("login")} (coming soon)`}
+            className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-5 py-2 text-sm font-light tracking-wide text-white shadow-md shadow-blue-500/20 transition-transform duration-300 hover:scale-[1.03]"
+          >
+            {tHeader("login")}
+          </a>
+          <LocaleSwitcher />
+          <ThemeToggle />
           <MobileMenu />
         </div>
       </nav>
