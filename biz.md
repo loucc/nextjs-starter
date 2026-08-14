@@ -81,7 +81,7 @@
 
 ## 五、建议实施顺序
 
-> **2026-08-13 进度:① 部署打通 ✅,② 合规底线 ✅**(Turnstile 表单验证、Cookie 同意横幅+分析脚本门控、安全响应头+CSP、退订 token HMAC+30 天过期)。③ D1 数据层待开始。(Next 16.3 + @opennextjs/cloudflare 1.20,MDX 构建期编译,Tailwind 4,本地 workerd 预览全路由 200)。真实部署仍需 Cloudflare API Token(见 wrangler.toml / CI secrets)。
+> **2026-08-14 进度:① 部署 ✅ ② 合规 ✅ ③ D1(submissions/waitlist/showcase)✅ ④-1 错误页+JSON-LD ✅ ④-2 测试体系(vitest 57 用例)✅ ④-3 R2 下载资源托管 ✅**。④-4 动态 OG 已实现验证(ImageResponse + R2 缓存,缓存命中 28ms)但 worker gzip 3.93MiB 超免费版 3MiB,**按用户决策搁置在 origin/feat/dynamic-og,付费计划后合并**。真实部署仍需 Cloudflare API Token / D1 真实 database_id / 各 wrangler secrets(见 wrangler.toml / README)。
 
 1. **① OpenNext/Cloudflare 部署打通** + logger 改造 + CI(先跑起来)
 2. **② 合规底线**:Turnstile + 安全头 + token 签名 + Cookie 同意
