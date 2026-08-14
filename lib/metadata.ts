@@ -8,6 +8,8 @@ type MetadataProps = {
   title?: string
   description?: string
   images?: string[]
+  /** Overrides the default static /og.png (e.g. the dynamic OG route). */
+  ogImage?: string | null
   noIndex?: boolean
   locale: Locale
   path?: string
@@ -19,6 +21,7 @@ export async function constructMetadata({
   title,
   description,
   images = [],
+  ogImage,
   noIndex = false,
   locale,
   path,
@@ -37,15 +40,17 @@ export async function constructMetadata({
     : `${pageTitle} | ${t('title')}`
 
   // build image URLs
-  const imageUrls = images.length > 0
-    ? images.map(img => ({
-      url: img.startsWith('http') ? img : `${siteConfig.url}/${img}`,
-      alt: pageTitle,
-    }))
-    : [{
-      url: `${siteConfig.url}/og.png`,
-      alt: pageTitle,
-    }]
+  const imageUrls = ogImage
+    ? [{ url: ogImage, alt: pageTitle }]
+    : images.length > 0
+      ? images.map(img => ({
+        url: img.startsWith('http') ? img : `${siteConfig.url}/${img}`,
+        alt: pageTitle,
+      }))
+      : [{
+        url: `${siteConfig.url}/og.png`,
+        alt: pageTitle,
+      }]
 
   // Open Graph Site
   const pageURL = `${locale === DEFAULT_LOCALE ? '' : `/${locale}`}${path}` || siteConfig.url

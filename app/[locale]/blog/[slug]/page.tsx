@@ -1,5 +1,6 @@
 import { Callout } from "@/components/mdx/Callout";
 import { JsonLd } from "@/components/JsonLd";
+import { siteConfig } from "@/config/site";
 import { Locale, LOCALES } from "@/i18n/routing";
 import { getPosts } from "@/lib/content";
 import { blogPostingJsonLd } from "@/lib/jsonLd";
@@ -39,10 +40,10 @@ export async function generateMetadata({
     page: "blog",
     title: post.title,
     description: post.description,
-    images: post.image ? [post.image] : [],
     locale: locale as Locale,
     path: `/blog/${slug}`,
     canonicalUrl: `/blog/${slug}`,
+    ogImage: `${siteConfig.url}/api/og?type=blog&locale=${locale}&slug=${encodeURIComponent(post.slug)}`,
   });
 }
 
