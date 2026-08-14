@@ -1,6 +1,5 @@
 "use client";
 
-import AiAvatar from "@/components/home/AiAvatar";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -78,49 +77,42 @@ export default function Hero() {
       </svg>
 
       {/* content */}
-      <div className="relative flex w-full max-w-6xl flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
-        <div className="flex max-w-2xl flex-col items-center gap-6 lg:items-start">
-          <h1 className="font-light tracking-[0.18em] text-slate-700 dark:text-slate-300 text-2xl sm:text-3xl">
-            Seren<span className="bg-gradient-to-r from-blue-600 to-violet-500 bg-clip-text text-transparent font-normal">AI</span>
-          </h1>
+      <div className="relative flex w-full max-w-4xl flex-col items-center gap-8 text-center">
+        <h1 className="font-light tracking-[0.18em] text-slate-700 dark:text-slate-300 text-2xl sm:text-3xl">
+          Seren<span className="bg-gradient-to-r from-blue-600 to-violet-500 bg-clip-text text-transparent font-normal">AI</span>
+        </h1>
 
-          <p className="text-4xl font-semibold leading-snug tracking-tight text-slate-900 dark:text-gray-100 sm:text-5xl">
-            {t("slogan")}
-          </p>
+        <p className="text-4xl font-semibold leading-snug tracking-tight text-slate-900 dark:text-gray-100 sm:text-5xl">
+          {t("slogan")}
+        </p>
 
-          <div className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
-            {points.map((point) => (
-              <span
-                key={point}
-                className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300"
-              >
-                {point}
-              </span>
-            ))}
-          </div>
-
-          {/* bottom-right buttons (in-flow, aligned right on desktop) */}
-          <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row lg:self-end">
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              aria-label={`${t("ctaTry")} (coming soon)`}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-9 py-3 text-sm font-light tracking-wide text-white shadow-lg shadow-blue-400/30 transition-transform duration-300 hover:scale-[1.04]"
+        <div className="flex flex-wrap justify-center gap-2.5">
+          {points.map((point) => (
+            <span
+              key={point}
+              className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300"
             >
-              {t("ctaTry")}
-            </a>
-            <Link
-              href="/features"
-              className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:text-blue-300"
-            >
-              {t("ctaLearn")}
-            </Link>
-          </div>
+              {point}
+            </span>
+          ))}
         </div>
 
-        {/* gentle AI avatar */}
-        <div className="order-first lg:order-last lg:mr-16">
-          <AiAvatar />
+        {/* bottom-right buttons */}
+        <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            aria-label={`${t("ctaTry")} (coming soon)`}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-9 py-3 text-sm font-light tracking-wide text-white shadow-lg shadow-blue-400/30 transition-transform duration-300 hover:scale-[1.04]"
+          >
+            {t("ctaTry")}
+          </a>
+          <Link
+            href="/features"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:text-blue-300"
+          >
+            {t("ctaLearn")}
+          </Link>
         </div>
       </div>
     </section>
