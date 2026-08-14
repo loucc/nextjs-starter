@@ -23,16 +23,21 @@ export default function WellnessSections() {
         <FeatureGrid />
       </section>
 
-      {/* Closing CTA — 让AI，成为你的专属心灵树洞 */}
+      {/* Closing CTA — 让AI，成为你的专属心灵树洞 (translucent light banner) */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 p-10 sm:p-14 text-center">
+        <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-gradient-to-br from-healing-purple/90 via-healing-milk/80 to-healing-blue/90 p-12 sm:p-16 text-center shadow-soft-glow backdrop-blur-sm dark:border-white/10 dark:from-indigo-950/40 dark:via-slate-900/30 dark:to-slate-900/40">
+          {/* soft micro-glow */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-healing-mist blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-healing-purple/70 blur-3xl" />
           </div>
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              {t("ctaTitle")}
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-text-main dark:text-gray-100">
+              {t("ctaPre")}
+              <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">
+                {t("ctaHighlight")}
+              </span>
+              {t("ctaSuffix")}
             </h2>
           </div>
         </div>

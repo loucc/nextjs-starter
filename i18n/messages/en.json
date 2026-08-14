@@ -89,7 +89,6 @@
     "slogan": "AI emotional companionship that heals every feeling",
     "quoteTitle": "Embrace every emotion, gently heal yourself",
     "careTitle": "24/7 AI emotional guidance to dissolve stress and anxiety",
-    "ctaTitle": "Let AI become your safe haven for every feeling",
     "heroPoints": [
       "24/7 emotional guidance",
       "Heartful companionship",
@@ -124,7 +123,10 @@
         "description": "Professional healing techniques to gently repair and restore inner calm."
       }
     ],
-    "shortDescription": "SerenAI delivers intelligent AI-powered emotional companionship and mental healing solutions. Get 24/7 personalized mood support, stress relief and emotional soothing for a calmer, healthier mind."
+    "shortDescription": "SerenAI delivers intelligent AI-powered emotional companionship and mental healing solutions. Get 24/7 personalized mood support, stress relief and emotional soothing for a calmer, healthier mind.",
+    "ctaPre": "Let AI become ",
+    "ctaHighlight": "your safe haven",
+    "ctaSuffix": " for every feeling"
   },
   "Blog": {
     "title": "Mental Insights",

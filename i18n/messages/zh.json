@@ -89,7 +89,6 @@
     "slogan": "AI 智能情感陪伴，治愈每一种情绪",
     "quoteTitle": "接纳所有情绪，温柔治愈自己",
     "careTitle": "全天候 AI 情绪疏导，消解内耗与焦虑",
-    "ctaTitle": "让 AI，成为你的专属心灵树洞",
     "heroPoints": [
       "全天候情绪疏导",
       "心灵陪伴",
@@ -124,7 +123,10 @@
         "description": "专业的情绪疗愈技巧,陪你温柔修复,找回内心的平静与力量。"
       }
     ],
-    "shortDescription": "SerenAI 提供智能 AI 情感陪伴与心灵疗愈方案,全天候个性化情绪支持、压力缓解与情绪安抚,助你拥有更平静健康的心灵。"
+    "shortDescription": "SerenAI 提供智能 AI 情感陪伴与心灵疗愈方案,全天候个性化情绪支持、压力缓解与情绪安抚,助你拥有更平静健康的心灵。",
+    "ctaPre": "让 AI,成为你的",
+    "ctaHighlight": "专属心灵树洞",
+    "ctaSuffix": ""
   },
   "Blog": {
     "title": "心理洞察",
