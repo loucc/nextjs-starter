@@ -68,7 +68,7 @@ export default function MobileMenu() {
             ))}
             <DropdownMenuItem>
               <span
-                className="w-full rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-1.5 text-center text-white"
+                className="w-full rounded-full border border-white/60 bg-healing-purple/70 px-4 py-1.5 text-center text-text-main backdrop-blur-sm transition-colors duration-300 hover:bg-healing-purple dark:border-white/10 dark:bg-night-card/60 dark:text-slate-200 dark:hover:bg-night-card/90"
                 aria-label={`${tHeader("login")} (coming soon)`}
               >
                 {tHeader("login")}
