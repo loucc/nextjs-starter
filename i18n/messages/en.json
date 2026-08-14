@@ -126,7 +126,7 @@
     ]
   },
   "Blog": {
-    "title": "Blog Posts",
+    "title": "Mental Insights",
     "description": "A list of blog posts",
     "searchPlaceholder": "Search posts...",
     "noResults": "No posts match your search."

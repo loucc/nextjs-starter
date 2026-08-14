@@ -126,7 +126,7 @@
     ]
   },
   "Blog": {
-    "title": "博客列表",
+    "title": "心理洞察",
     "description": "博客列表",
     "searchPlaceholder": "搜索文章...",
     "noResults": "没有匹配的文章。"

@@ -126,7 +126,7 @@
     ]
   },
   "Blog": {
-    "title": "ブログ一覧",
+    "title": "心理インサイト",
     "description": "ブログ投稿の一覧",
     "searchPlaceholder": "記事を検索...",
     "noResults": "一致する記事がありません。"
