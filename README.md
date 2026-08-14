@@ -294,9 +294,8 @@ pnpm test && pnpm lint && pnpm build && pnpm build:worker  # verify
 
 Rules of thumb:
 
-- **Upgrade the Next.js family together**: `next`, `@next/env`,
-  `@next/bundle-analyzer`, `@next/mdx` and `eslint-config-next` must stay
-  on the same minor/patch version.
+- **Upgrade the Next.js family together**: `next`, `@next/mdx` and
+  `eslint-config-next` must stay on the same minor/patch version.
 - **Same-major bumps are safe**; always run the full verify chain after.
 - **Held back deliberately**: `eslint` (9.x — locked by
   eslint-config-next), `typescript` (5.x — Next 16 support matrix),

@@ -1,7 +1,5 @@
 import { SiteConfig } from "@/types/siteConfig";
 
-export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nextjsstarter.io";
-
 const TWITTER_URL = 'https://x.com/weijunext'
 const BSKY_URL = 'https://bsky.app/profile/judewei.bsky.social'
 const EMAIL_URL = 'weijunext@gmail.com'
@@ -12,7 +10,7 @@ export const siteConfig: SiteConfig = {
   tagLine: 'Multilingual Next.js 16 Starter',
   description:
     "A multilingual Next.js 16 starter with built-in i18n support. Launch your global-ready web application with a clean, efficient, and SEO-friendly foundation.",
-  url: BASE_URL,
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://nextjsstarter.io",
   authors: [
     {
       name: "weijunext",

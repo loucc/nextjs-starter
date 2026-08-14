@@ -286,8 +286,8 @@ pnpm test && pnpm lint && pnpm build && pnpm build:worker  # 全量验证
 
 经验法则:
 
-- **Next.js 家族必须同步升级**:`next`、`@next/env`、`@next/bundle-analyzer`、
-  `@next/mdx`、`eslint-config-next` 保持同一 minor/patch 版本
+- **Next.js 家族必须同步升级**:`next`、`@next/mdx`、`eslint-config-next`
+  保持同一 minor/patch 版本
 - **同 major 升级是安全的**;升级后必须跑完整验证链
 - **刻意不升级**:`eslint`(9.x,受 eslint-config-next 锁定)、`typescript`
   (5.x,Next 16 支持矩阵)、`@types/node`(20.x,与 engines 匹配)

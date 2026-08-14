@@ -292,9 +292,8 @@ pnpm test && pnpm lint && pnpm build && pnpm build:worker  # 全体検証
 
 経験則:
 
-- **Next.js ファミリーは同期してアップグレード**:`next`、`@next/env`、
-  `@next/bundle-analyzer`、`@next/mdx`、`eslint-config-next` は同じ
-  minor/patch に揃える
+- **Next.js ファミリーは同期してアップグレード**:`next`、`@next/mdx`、
+  `eslint-config-next` は同じ minor/patch に揃える
 - **同一メジャー内のアップグレードは安全**;適用後は必ず検証チェーンを実行
 - **意図的に据え置き**:`eslint`(9.x — eslint-config-next がロック)、
   `typescript`(5.x — Next 16 のサポート範囲)、`@types/node`(20.x —
