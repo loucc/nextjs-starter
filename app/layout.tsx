@@ -1,6 +1,30 @@
 import { siteConfig } from "@/config/site";
+import { Inter, Noto_Sans_JP, Noto_Sans_SC } from "next/font/google";
 import { Viewport } from "next";
 import Script from "next/script";
+
+// Healing-tech font system: Inter for latin, Noto Sans SC/JP for CJK —
+// self-hosted at build time via next/font (no runtime external requests).
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-noto-sc",
+  display: "swap",
+  preload: false,
+});
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-noto-jp",
+  display: "swap",
+  preload: false,
+});
 
 // Root layout: owns <html>/<body> and the beforeInteractive theme
 // bootstrap. Root layouts never re-mount on client navigation — the
@@ -19,7 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${notoSansSC.variable} ${notoSansJP.variable}`}
+    >
       <head>
         <Script
           id="theme-init"

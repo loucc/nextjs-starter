@@ -22,11 +22,11 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-center overflow-hidden px-4 py-16">
       {/* soft gradient backdrop */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-indigo-50/60 to-violet-100/40 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-950" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-healing-blue via-healing-purple/70 to-healing-pink/60 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-950" />
 
       {/* ambient light blobs */}
-      <div className="absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl dark:bg-blue-500/10" />
-      <div className="absolute -right-32 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-violet-200/40 blur-3xl dark:bg-violet-500/10" />
+      <div className="absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-healing-cyan/80 blur-3xl dark:bg-blue-500/10" />
+      <div className="absolute -right-32 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-healing-purple blur-3xl dark:bg-violet-500/10" />
       <div className="absolute left-1/2 top-0 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl dark:bg-amber-400/5" />
 
       {/* flowing glow particles */}

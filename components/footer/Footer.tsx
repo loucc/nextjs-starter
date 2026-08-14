@@ -26,7 +26,7 @@ export default async function Footer() {
   const contactEmail = process.env.ADMIN_EMAIL;
 
   return (
-    <footer className="border-t border-slate-200/70 bg-white/60 dark:border-slate-800/70 dark:bg-slate-900/30 backdrop-blur-sm">
+    <footer className="border-t border-slate-200/70 bg-healing-blue/60 dark:border-slate-800/70 dark:bg-slate-900/30 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand + intro */}

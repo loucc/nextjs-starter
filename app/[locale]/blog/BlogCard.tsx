@@ -8,7 +8,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
     <I18nLink
       href={`/blog${post.slug}`}
       prefetch={false}
-      className="group block overflow-hidden rounded-[2rem] border border-white/50 bg-white/50 p-4 shadow-lg shadow-blue-500/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
+      className="group block overflow-hidden rounded-[2rem] border border-white/50 bg-white/50 p-4 shadow-soft-glow backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
     >
       <div className="relative overflow-hidden rounded-3xl pt-[56.25%]">
         <Image

@@ -88,7 +88,7 @@ export default function FeatureGrid() {
       {cards.map((card, index) => (
         <div
           key={card.title}
-          className="group relative overflow-hidden rounded-[2rem] border border-white/50 bg-white/50 p-8 shadow-lg shadow-blue-500/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
+          className="group relative overflow-hidden rounded-[2rem] border border-white/50 bg-white/50 p-8 shadow-soft-glow backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
         >
           {/* soft inner light */}
           <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/70 to-violet-100/50 blur-2xl transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-400/10 dark:to-violet-400/10" />

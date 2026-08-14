@@ -87,7 +87,7 @@ export default async function PricingPage({
           return (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-[2rem] border p-8 backdrop-blur-md shadow-lg shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 ${
+              className={`relative flex flex-col rounded-[2rem] border p-8 backdrop-blur-md shadow-soft-glow transition-all duration-300 hover:-translate-y-1 ${
                 featured
                   ? "border-blue-400/40 bg-blue-50/50 dark:border-blue-400/20 dark:bg-blue-900/10 shadow-xl shadow-blue-400/10"
                   : "border-white/50 bg-white/50 dark:border-white/10 dark:bg-slate-800/40"

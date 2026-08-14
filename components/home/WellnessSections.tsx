@@ -7,7 +7,7 @@ export default function WellnessSections() {
   return (
     <>
       {/* Philosophy quote — 接纳所有情绪，温柔治愈自己 */}
-      <section className="w-full py-20 bg-gradient-to-b from-transparent via-blue-50/40 to-transparent dark:via-blue-950/10">
+      <section className="w-full py-20 bg-gradient-to-b from-transparent via-healing-purple/70 to-transparent dark:via-blue-950/10">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-800 dark:text-gray-200 leading-relaxed">
             “{t("quoteTitle")}”
