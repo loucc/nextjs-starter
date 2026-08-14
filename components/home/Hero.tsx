@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
@@ -27,16 +26,6 @@ export default function Hero() {
         {t("description")}
       </p>
 
-      <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-2">
-        <Button
-          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-gradient-to-r from-blue-600 to-violet-500 text-white hover:from-blue-700 hover:to-violet-600"
-          asChild
-        >
-          <a href="#waitlist" className="flex items-center gap-2">
-            {t("ctaButton")}
-          </a>
-        </Button>
-      </div>
     </section>
   );
 }

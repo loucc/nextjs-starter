@@ -58,15 +58,9 @@ export default function WellnessSections() {
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
           </div>
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               {t("ctaTitle")}
             </h2>
-            <a
-              href="#waitlist"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 text-indigo-600 font-semibold hover:bg-white/90 transition-colors"
-            >
-              {t("ctaButton")}
-            </a>
           </div>
         </div>
       </section>

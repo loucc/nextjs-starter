@@ -9,7 +9,8 @@ compatibility_flags = ["nodejs_compat"]
 
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
-# D1 (SQLite) — waitlist data.
+# D1 (SQLite) — reserved for upcoming business data (users / conversations
+# when the login + AI chat feature ships). All v1 tables were removed.
 # Local dev uses preview_database_id (no login / real id required).
 # For production: create the database in the Cloudflare dashboard and
 # replace database_id with the real UUID, then run `pnpm db:migrate:remote`.
