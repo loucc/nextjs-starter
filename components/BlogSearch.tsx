@@ -38,12 +38,12 @@ export default function BlogSearch({
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           placeholder={t("searchPlaceholder")}
           aria-label={t("searchPlaceholder")}
-          className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full pl-10 pr-4 py-2.5 rounded-full border border-white/60 bg-white/60 backdrop-blur-md text-sm font-light shadow-lg shadow-blue-500/5 focus:outline-none focus:ring-2 focus:ring-blue-400/40 dark:border-white/10 dark:bg-slate-800/50"
         />
       </div>
 
       {showResults && (
-        <div className="absolute z-20 mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg overflow-hidden">
+        <div className="absolute z-20 mt-2 w-full rounded-2xl border border-white/50 bg-white/70 backdrop-blur-xl shadow-xl shadow-blue-500/5 overflow-hidden dark:border-white/10 dark:bg-slate-800/70">
           {results.length === 0 ? (
             <div className="px-4 py-3 text-sm text-slate-500 dark:text-slate-400">
               {t("noResults")}
@@ -55,7 +55,7 @@ export default function BlogSearch({
                 href={`/blog${post.slug}`}
                 locale={locale}
                 onMouseDown={(e) => e.preventDefault()}
-                className="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 border-b border-slate-100 dark:border-slate-700 last:border-b-0"
+                className="block px-4 py-3 hover:bg-blue-50/60 dark:hover:bg-slate-700/40 border-b border-slate-100/70 dark:border-slate-700/60 last:border-b-0"
               >
                 <div className="text-sm font-medium text-slate-900 dark:text-gray-200 truncate">
                   {post.title}

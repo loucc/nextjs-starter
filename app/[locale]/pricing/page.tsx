@@ -87,10 +87,10 @@ export default async function PricingPage({
           return (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-8 ${
+              className={`relative flex flex-col rounded-[2rem] border p-8 backdrop-blur-md shadow-lg shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 ${
                 featured
-                  ? "border-blue-500 shadow-lg shadow-blue-500/10 bg-blue-50/40 dark:bg-blue-900/10"
-                  : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50"
+                  ? "border-blue-400/40 bg-blue-50/50 dark:border-blue-400/20 dark:bg-blue-900/10 shadow-xl shadow-blue-400/10"
+                  : "border-white/50 bg-white/50 dark:border-white/10 dark:bg-slate-800/40"
               }`}
             >
               {featured && (
@@ -134,10 +134,10 @@ export default async function PricingPage({
                 href={href}
                 {...(isMailto ? {} : { target: href.startsWith("http") ? "_blank" : undefined })}
                 rel="noopener noreferrer"
-                className={`mt-8 inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                className={`mt-8 inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-light tracking-wide transition-all duration-300 ${
                   featured
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                    ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white shadow-lg shadow-blue-400/30 hover:scale-[1.03]"
+                    : "border border-white/60 bg-white/40 text-slate-700 backdrop-blur-sm hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-gray-200 dark:hover:text-blue-300"
                 }`}
               >
                 {planId === "free"
