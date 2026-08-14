@@ -48,10 +48,10 @@ export default async function TechnologyPage({
   return (
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-14">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-gray-200">
+        <h1 className="text-4xl font-bold tracking-tight text-text-main dark:text-gray-200">
           {t("title")}
         </h1>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-text-muted dark:text-slate-400 max-w-2xl mx-auto">
           {t("description")}
         </p>
       </div>
@@ -62,15 +62,15 @@ export default async function TechnologyPage({
           return (
             <div
               key={section.title}
-              className="rounded-2xl border border-slate-200/60 dark:border-slate-700/60 bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm p-8"
+              className="rounded-2xl border border-line/60 dark:border-slate-700/60 bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm p-8"
             >
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 text-white mb-4">
                 <Icon className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-medium text-slate-900 dark:text-gray-200 mb-2">
+              <h3 className="text-lg font-medium text-text-main dark:text-gray-200 mb-2">
                 {section.title}
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-sm text-text-muted dark:text-slate-400 leading-relaxed">
                 {section.description}
               </p>
             </div>

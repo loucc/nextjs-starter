@@ -23,7 +23,7 @@ export default function ErrorPage({
       <AlertCircleIcon className="w-12 h-12 text-red-500" />
       <h1 className="text-3xl font-bold">{t("title")}</h1>
       <p className="text-muted-foreground max-w-md">{t("description")}</p>
-      <Button onClick={reset}>{t("retry")}</Button>
+      <Button onClick={reset} className="rounded-full bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg shadow-blue-400/25 hover:opacity-90">{t("retry")}</Button>
     </div>
   );
 }

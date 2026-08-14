@@ -9,7 +9,7 @@ export default function WellnessSections() {
       {/* Philosophy quote — 接纳所有情绪，温柔治愈自己 */}
       <section className="w-full py-20 bg-gradient-to-b from-transparent via-healing-purple/70 to-transparent dark:via-blue-950/10">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-800 dark:text-gray-200 leading-relaxed">
+          <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-text-main dark:text-gray-200 leading-relaxed">
             “{t("quoteTitle")}”
           </p>
         </div>
@@ -17,7 +17,7 @@ export default function WellnessSections() {
 
       {/* Feature grid — 六项产品功能 */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 dark:text-gray-200 mb-14">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-text-main dark:text-gray-200 mb-14">
           {t("careTitle")}
         </h2>
         <FeatureGrid />

@@ -69,7 +69,7 @@ export default async function BlogPage({ params }: { params: Params }) {
             return (
               <div
                 key={tag}
-                className={`rounded-md bg-gray-200 hover:!no-underline dark:bg-[#24272E] flex px-2.5 py-1.5 text-sm font-medium transition-colors hover:text-black hover:dark:bg-[#15AFD04C] hover:dark:text-[#82E9FF] text-gray-500 dark:text-[#7F818C] outline-none focus-visible:ring transition`}
+                className="rounded-full border border-line/60 bg-white/60 px-3 py-1.5 text-xs font-light text-text-muted backdrop-blur-sm transition-colors hover:border-healing-blue hover:text-blue-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:hover:text-blue-300"
               >
                 {tag.trim()}
               </div>

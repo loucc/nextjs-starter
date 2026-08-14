@@ -42,17 +42,17 @@ export default async function FeaturesPage({
   return (
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-14">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-gray-200">
+        <h1 className="text-4xl font-bold tracking-tight text-text-main dark:text-gray-200">
           {t("title")}
         </h1>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-text-muted dark:text-slate-400 max-w-2xl mx-auto">
           {t("description")}
         </p>
       </div>
 
       <FeatureGrid />
 
-      <p className="mt-16 text-center text-xl font-light tracking-wide text-slate-600 dark:text-slate-400">
+      <p className="mt-16 text-center text-xl font-light tracking-wide text-text-muted dark:text-slate-400">
         “{tHome("quoteTitle")}”
       </p>
     </div>

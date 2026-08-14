@@ -45,13 +45,13 @@ export default async function ChangelogPage({
     <div className="w-full md:w-3/5 px-2 md:px-12 py-16">
       <div className="flex items-start justify-between gap-4 mb-10">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-gray-200">
+          <h1 className="text-4xl font-bold tracking-tight text-text-main dark:text-gray-200">
             {t("title")}
           </h1>
-          <p className="mt-3 text-slate-600 dark:text-slate-400 max-w-xl">
+          <p className="mt-3 text-text-muted dark:text-slate-400 max-w-xl">
             {t("description")}
           </p>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-2 text-sm text-text-muted dark:text-slate-400">
             {t("subscribeHint")}{" "}
             <Link
               href="/api/changelog/rss"
@@ -66,18 +66,18 @@ export default async function ChangelogPage({
 
       <div className="space-y-10">
         {entries.map((entry) => (
-          <article key={entry.version} className="relative pl-6 border-l-2 border-slate-200 dark:border-slate-700">
-            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600" />
+          <article key={entry.version} className="relative pl-6 border-l-2 border-line dark:border-slate-700">
+            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-violet-400" />
             <header className="flex flex-wrap items-baseline gap-3 mb-2">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-gray-200">
+              <h2 className="text-xl font-bold text-text-main dark:text-gray-200">
                 {entry.title || entry.version}
               </h2>
-              <span className="text-sm font-mono text-slate-500 dark:text-slate-400">
+              <span className="text-sm font-mono text-text-muted dark:text-slate-400">
                 {entry.version}
               </span>
               <time
                 dateTime={new Date(entry.date).toISOString()}
-                className="text-sm text-slate-500 dark:text-slate-400"
+                className="text-sm text-text-muted dark:text-slate-400"
               >
                 {new Date(entry.date).toLocaleDateString(locale, {
                   year: "numeric",

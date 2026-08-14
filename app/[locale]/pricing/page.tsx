@@ -137,7 +137,7 @@ export default async function PricingPage({
                 className={`mt-8 inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-light tracking-wide transition-all duration-300 ${
                   featured
                     ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white shadow-lg shadow-blue-400/30 hover:scale-[1.03]"
-                    : "border border-white/60 bg-white/40 text-slate-700 backdrop-blur-sm hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-gray-200 dark:hover:text-blue-300"
+                    : "border border-white/60 bg-white/40 text-text-muted backdrop-blur-sm hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-gray-200 dark:hover:text-blue-300"
                 }`}
               >
                 {planId === "free"

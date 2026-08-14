@@ -14,9 +14,9 @@ export function Callout({
 }: CalloutProps) {
   return (
     <div
-      className={cn("my-6 flex items-start rounded-md border border-l-4 p-4", {
-        "border-red-900 bg-red-50": type === "danger",
-        "border-yellow-900 bg-yellow-50": type === "warning",
+      className={cn("my-6 flex items-start rounded-xl border border-l-4 border-line/60 bg-healing-mist/60 p-4", {
+        "border-rose-200/80 bg-rose-50/70": type === "danger",
+        "border-amber-200/80 bg-amber-50/70": type === "warning",
       })}
       {...props}
     >

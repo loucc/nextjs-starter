@@ -109,7 +109,7 @@ export default function Hero() {
           </a>
           <Link
             href="/features"
-            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:text-blue-300"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:text-blue-300"
           >
             {t("ctaLearn")}
           </Link>

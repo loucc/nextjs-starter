@@ -15,7 +15,7 @@ export default async function NotFoundPage() {
       <FileQuestionIcon className="w-12 h-12 text-muted-foreground" />
       <h1 className="text-3xl font-bold">{t("notFoundTitle")}</h1>
       <p className="text-muted-foreground max-w-md">{t("notFoundDescription")}</p>
-      <Button asChild>
+      <Button asChild className="rounded-full bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg shadow-blue-400/25 hover:opacity-90">
         <I18nLink href="/">{t("backHome")}</I18nLink>
       </Button>
     </div>

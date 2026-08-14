@@ -87,7 +87,7 @@ export function Newsletter() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="w-full px-3 py-2 bg-gray-200 text-black text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-3 py-2 bg-white/70 border border-line/60 text-text-main text-sm rounded-lg backdrop-blur-sm placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-healing-blue/50 focus:border-healing-blue"
             disabled={subscribeStatus === "loading"}
           />
         </div>
@@ -96,7 +96,7 @@ export function Newsletter() {
           onToken={setTurnstileToken}
           theme="auto"
         />
-        <Button type="submit" disabled={subscribeStatus === "loading"}>
+        <Button type="submit" disabled={subscribeStatus === "loading"} className="rounded-full bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg shadow-blue-400/25 hover:opacity-90">
           {subscribeStatus === "loading" ? (
             t("subscribing")
           ) : (

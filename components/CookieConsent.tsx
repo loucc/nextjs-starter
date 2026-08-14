@@ -69,7 +69,7 @@ export default function CookieConsent() {
             </I18nLink>
           </p>
           <div className="flex items-center gap-2">
-            <Button size="sm" onClick={() => choose("accepted")}>
+            <Button size="sm" onClick={() => choose("accepted")} className="rounded-full bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg shadow-blue-400/25 hover:opacity-90">
               {t("accept")}
             </Button>
             <Button

@@ -29,7 +29,7 @@ export default function BlogSearch({
   return (
     <div className="relative max-w-xl mx-auto mb-8">
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/70" />
         <input
           type="search"
           value={query}
@@ -45,7 +45,7 @@ export default function BlogSearch({
       {showResults && (
         <div className="absolute z-20 mt-2 w-full rounded-2xl border border-line/70 bg-white/70 backdrop-blur-xl shadow-soft-glow overflow-hidden dark:border-white/10 dark:bg-slate-800/70">
           {results.length === 0 ? (
-            <div className="px-4 py-3 text-sm text-slate-500 dark:text-slate-400">
+            <div className="px-4 py-3 text-sm text-slate-500 dark:text-text-muted/70">
               {t("noResults")}
             </div>
           ) : (
@@ -61,7 +61,7 @@ export default function BlogSearch({
                   {post.title}
                 </div>
                 {post.description && (
-                  <div className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                  <div className="text-xs text-slate-500 dark:text-text-muted/70 truncate mt-0.5">
                     {post.description}
                   </div>
                 )}

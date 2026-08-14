@@ -33,13 +33,13 @@ export default async function UnsubscribePage(props: {
   }
 
   return (
-    <div className="max-w-md mx-auto my-16 p-6 rounded-lg shadow-md">
+    <div className="max-w-md mx-auto my-16 p-6 rounded-2xl border border-line/60 bg-white/60 shadow-soft-glow backdrop-blur-sm">
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
 
       {status === "success" ? (
         <div>
           <p className="mb-4">{t("success")}</p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-text-muted">
             {t("emailLabel")}: {email}
           </p>
           <p className="mt-6">{t("resubscribe")}</p>

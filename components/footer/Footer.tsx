@@ -112,8 +112,8 @@ export default async function Footer() {
         </div>
 
         {/* hairline divider */}
-        <div className="mt-12 border-t border-slate-200/70 dark:border-slate-800/70 pt-6">
-          <p className="text-center text-xs font-light tracking-wide text-slate-400 dark:text-slate-500">
+        <div className="mt-12 border-t border-line/70 dark:border-slate-800/70 pt-6">
+          <p className="text-center text-xs font-light tracking-wide text-text-muted/80 dark:text-slate-500">
             {tFooter("Copyright", {
               year: new Date().getFullYear(),
               name: siteConfig.name,
