@@ -54,8 +54,8 @@
       ]
     },
     "Newsletter": {
-      "title": "Next.js Starterのニュースレターに登録する",
-      "description": "Next.js Starterの最新のニュースと更新情報を入手します。",
+      "title": "SerenAI のニュースレターに登録する",
+      "description": "SerenAI の最新ニュースと更新情報を入手します。",
       "defaultErrorMessage": "有効なメールアドレスを入力してください。",
       "successMessage": "登録が完了しました。",
       "errorMessage": "登録に失敗しました。",
@@ -64,12 +64,14 @@
       "subscribing": "登録中...",
       "subscribed": "登録が完了しました。ありがとうございます。",
       "turnstileRequired": "セキュリティ確認を完了してください"
-    }
+    },
+    "title": "SerenAI",
+    "tagLine": "あなたの AI 感情コンパニオン"
   },
   "Home": {
-    "title": "Next.js Starter",
-    "tagLine": "Next.js 多言語スターターテンプレート",
-    "description": "多言語対応機能を搭載したNext.js 15スターターテンプレート。SEO最適化済みで、グローバル展開可能なウェブアプリを効率的に構築できます。"
+    "title": "SerenAI",
+    "tagLine": "あなたの AI 感情コンパニオン",
+    "description": "SerenAI はあなた専用の AI 感情コンパニオンです。専門的な気分の癒し、感情のガイダンス、ストレス解消、心のリラクゼーションを提供します。最先端の AI 感情認識技術を活用し、パーソナライズされた心のケアと 24 時間体制のメンタルサポートで、不安や感情の燃え尽き、孤独感を和らげます。SerenAI とともに、やさしくテクノロジーが支えるメンタルウェルネスを体験し、心を落ち着けましょう。"
   },
   "Blog": {
     "title": "ブログ一覧",

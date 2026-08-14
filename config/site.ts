@@ -6,10 +6,10 @@ const EMAIL_URL = 'weijunext@gmail.com'
 const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL
 
 export const siteConfig: SiteConfig = {
-  name: "Next.js Starter",
-  tagLine: 'Multilingual Next.js 16 Starter',
+  name: "SerenAI",
+  tagLine: 'Your AI emotional companion',
   description:
-    "A multilingual Next.js 16 starter with built-in i18n support. Launch your global-ready web application with a clean, efficient, and SEO-friendly foundation.",
+    "SerenAI is your dedicated AI emotional companion, providing professional mood healing, emotional guidance, stress relief and mental relaxation services. Powered by advanced AI emotion recognition technology, it offers personalized emotional comfort and round-the-clock mental support to ease anxiety, emotional burnout and loneliness. Discover gentle, tech-driven mental wellness and calm your mind with SerenAI.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://nextjsstarter.io",
   authors: [
     {
@@ -30,8 +30,8 @@ export const siteConfig: SiteConfig = {
   ],
   defaultNextTheme: 'system', // next-theme option: system | dark | light
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/logo.png",
-    apple: "/logo.png", // apple-touch-icon.png
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.png", // TODO: regenerate apple-touch-icon with SerenAI branding
   },
 }

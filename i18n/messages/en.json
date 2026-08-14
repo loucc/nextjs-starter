@@ -55,7 +55,7 @@
     },
     "Newsletter": {
       "title": "Subscribe to our newsletter",
-      "description": "Get the latest news and updates from Next.js Starter",
+      "description": "Get the latest news and updates from SerenAI",
       "defaultErrorMessage": "Please enter a valid email address",
       "successMessage": "Subscription successful",
       "errorMessage": "Subscription failed",
@@ -64,12 +64,14 @@
       "subscribing": "Subscribing...",
       "subscribed": "Subscription successful! Thank you for your attention.",
       "turnstileRequired": "Please complete the security check"
-    }
+    },
+    "title": "SerenAI",
+    "tagLine": "Your AI emotional companion"
   },
   "Home": {
-    "title": "Next.js Starter",
-    "tagLine": "Multilingual Next.js 16 Starter",
-    "description": "A multilingual Next.js 16 starter with built-in i18n support. Launch your global-ready web application with a clean, efficient, and SEO-friendly foundation."
+    "title": "SerenAI",
+    "tagLine": "Your AI emotional companion",
+    "description": "SerenAI is your dedicated AI emotional companion, providing professional mood healing, emotional guidance, stress relief and mental relaxation services. Powered by advanced AI emotion recognition technology, it offers personalized emotional comfort and round-the-clock mental support to ease anxiety, emotional burnout and loneliness. Discover gentle, tech-driven mental wellness and calm your mind with SerenAI."
   },
   "Blog": {
     "title": "Blog Posts",
