@@ -21,7 +21,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { notFound } from "next/navigation";
 
 type MetadataProps = {
@@ -68,9 +68,17 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  // No-flash theme script: applies the stored/system theme class before
+  // hydration. Static HTML in the layout — unlike next-themes, this does
+  // not render a <script> inside a React component (which React 19.2
+  // rejects on the client).
+  const noFlashScript = `(function(){try{var t=localStorage.getItem("theme")||"system";var d=t==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):t;document.documentElement.classList.add(d);document.documentElement.style.colorScheme=d}catch(e){}})();`;
+
   return (
     <html lang={locale || DEFAULT_LOCALE} suppressHydrationWarning>
-      <head />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: noFlashScript }} />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background flex flex-col font-sans antialiased"
