@@ -125,7 +125,9 @@
   },
   "Blog": {
     "title": "ブログ一覧",
-    "description": "ブログ投稿の一覧"
+    "description": "ブログ投稿の一覧",
+    "searchPlaceholder": "記事を検索...",
+    "noResults": "一致する記事がありません。"
   },
   "About": {
     "title": "サイトについて",

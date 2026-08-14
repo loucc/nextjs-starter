@@ -125,7 +125,9 @@
   },
   "Blog": {
     "title": "Blog Posts",
-    "description": "A list of blog posts"
+    "description": "A list of blog posts",
+    "searchPlaceholder": "Search posts...",
+    "noResults": "No posts match your search."
   },
   "About": {
     "title": "About",

@@ -1,4 +1,5 @@
 import { BlogCard } from "@/app/[locale]/blog/BlogCard";
+import BlogSearch from "@/components/BlogSearch";
 import { Locale, LOCALES } from "@/i18n/routing";
 import { getPosts } from "@/lib/content";
 import { constructMetadata } from "@/lib/metadata";
@@ -33,9 +34,21 @@ export default async function Page({ params }: { params: Params }) {
 
   const t = await getTranslations("Blog");
 
+  // Client components receive only serializable fields (Component and
+  // metadata are server-only).
+  const searchablePosts = posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    tags: post.tags,
+    date: new Date(post.date).toISOString(),
+  }));
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-center">{t("title")}</h1>
+
+      <BlogSearch posts={searchablePosts} locale={locale} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (

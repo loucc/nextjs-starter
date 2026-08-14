@@ -125,7 +125,9 @@
   },
   "Blog": {
     "title": "博客列表",
-    "description": "博客列表"
+    "description": "博客列表",
+    "searchPlaceholder": "搜索文章...",
+    "noResults": "没有匹配的文章。"
   },
   "About": {
     "title": "关于",
