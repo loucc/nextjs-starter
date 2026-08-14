@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
-import { MousePointerClick } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { SiDiscord } from "react-icons/si";
@@ -30,23 +29,6 @@ export default function Hero() {
       </p>
 
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-2">
-        <Button
-          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
-          variant="outline"
-          asChild
-        >
-          <Link
-            href="https://nexty.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Get SaaS Version - NEXTY.DEV"
-            prefetch={false}
-            className="flex items-center gap-2"
-          >
-            <MousePointerClick className="w-4 h-4 text-indigo-500" />
-            Get SaaS Version
-          </Link>
-        </Button>
         <Button
           className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
           variant="outline"
