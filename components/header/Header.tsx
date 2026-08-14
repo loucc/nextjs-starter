@@ -48,7 +48,7 @@ const Header = () => {
             onClick={(e) => e.preventDefault()}
             title={tHeader("login")}
             aria-label={`${tHeader("login")} (coming soon)`}
-            className="hidden md:inline-flex items-center rounded-full border border-white/60 bg-healing-purple/70 px-5 py-2 text-sm font-light tracking-wide text-text-main backdrop-blur-sm transition-colors duration-300 hover:bg-healing-purple dark:border-white/10 dark:bg-night-card/60 dark:text-slate-200 dark:hover:bg-night-card/90"
+            className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-blue-400 to-violet-400 px-5 py-2 text-sm font-light tracking-wide text-white shadow-[0_10px_30px_-8px_rgba(96,165,250,0.6),0_0_24px_rgba(167,139,250,0.4)] transition-all duration-300 hover:scale-[1.05] hover:brightness-105 active:scale-[0.98]"
           >
             {tHeader("login")}
           </a>
