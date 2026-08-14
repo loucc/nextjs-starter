@@ -260,5 +260,24 @@
   "Features": {
     "title": "产品功能",
     "description": "SerenAI 的每一项能力,都为了温柔而有效地帮助你疗愈。"
+  },
+  "Chat": {
+    "title": "SerenAI 聊天",
+    "description": "与你的 SerenAI 情感陪伴者对话——一个安全温柔、24 小时在线的情绪空间。",
+    "signInTitle": "欢迎来到你的心灵树洞",
+    "signInDescription": "使用 Google 登录,开始与你的 AI 陪伴者对话。你的聊天记录只属于你自己。",
+    "signInError": "登录失败,请重试。",
+    "newChat": "新对话",
+    "delete": "删除",
+    "cancel": "取消",
+    "confirmDelete": "确定删除这个对话吗?",
+    "inputPlaceholder": "说说你的心里话……",
+    "send": "发送",
+    "stop": "停止",
+    "emptyState": "开始一段新对话吧——我会温柔地听你说,不评判。",
+    "emptyConversations": "还没有对话",
+    "errorSend": "消息发送失败,请重试。",
+    "logout": "退出登录",
+    "newConversation": "新对话"
   }
 }

@@ -6,8 +6,14 @@ const withNextIntl = createNextIntlPlugin();
 
 // Makes `next dev` aware of Cloudflare bindings (D1/R2/KV in wrangler.toml)
 // via the wrangler platform proxy — getCloudflareContext() and lib/db.ts
-// then work in local dev. Self-gates: no-op outside of development.
-initOpenNextCloudflareForDev();
+// then work in local dev. Gated on NODE_ENV because the upstream helper
+// keys off AsyncLocalStorage alone, which is ALSO present in the worker
+// that loads next.config during `next build` (Turbopack's remote runtime) —
+// starting the proxy at build time is useless and, with an AI binding
+// present, makes wrangler demand Cloudflare credentials in CI.
+if (process.env.NODE_ENV === "development") {
+  initOpenNextCloudflareForDev();
+}
 
 // Compile .mdx files to React components at BUILD time. Required because
 // Cloudflare Workers forbids eval/new Function, so runtime MDX compilation
@@ -46,6 +52,8 @@ function securityHeaders() {
     "https://hm.baidu.com",
     "https://pagead2.googlesyndication.com",
     "https://challenges.cloudflare.com",
+    // Google Identity Services (Sign in with Google)
+    "https://accounts.google.com",
     ...(plausibleOrigin ? [plausibleOrigin] : []),
   ].join(" ");
 
@@ -55,6 +63,8 @@ function securityHeaders() {
     "https://*.googletagmanager.com",
     "https://*.baidu.com",
     "https://*.googlesyndication.com",
+    // Google Identity Services (Sign in with Google)
+    "https://accounts.google.com",
     ...(plausibleOrigin ? [plausibleOrigin] : []),
   ].join(" ");
 
@@ -84,7 +94,7 @@ function securityHeaders() {
       value: [
         "default-src 'self'",
         `script-src ${scriptSrc}`,
-        "frame-src https://challenges.cloudflare.com https://googleads.g.doubleclick.net",
+        "frame-src https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://accounts.google.com",
         `connect-src ${connectSrc}`,
         "img-src 'self' data: blob: https:",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",

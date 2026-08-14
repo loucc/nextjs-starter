@@ -83,6 +83,8 @@
 
 > **2026-08-14 进度:① 部署 ✅ ② 合规 ✅ ③ D1(submissions/waitlist;showcase 已按品牌定位移除)✅ ④-1 错误页+JSON-LD ✅ ④-2 测试体系(vitest 57 用例)✅ ④-3 R2 下载资源托管 ✅**。④-4 动态 OG 已实现验证但搁置(worker gzip 3.93MiB 超免费版 3MiB → origin/feat/dynamic-og,付费计划后合并)。④-5 Pricing 页面 ✅(三档定价+FAQ+FAQPage JSON-LD,三语,支付链接 NEXT_PUBLIC_PRICING_CHECKOUT_URL,Header/sitemap 已接入)。④-6 Changelog 已按用户决定移除(页面/RSS/内容/i18n/Footer/sitemap),上线后按版本节奏增量重建。真实部署仍需 Cloudflare API Token / D1 真实 database_id / 各 wrangler secrets(见 wrangler.toml / README)。
 
+> **2026-08-14 ⑤ 登录 + AI 聊天 ✅**(dev-biz):Google OAuth(GIS 客户端流 + tokeninfo 验证,jose/JWKS 为升级路径)、stateless HMAC 会话 cookie(lib/hmac.ts 共享加密,serenai_session 30 天)、D1 三表(migration 0005:users/conversations/messages)、多会话 CRUD + SSE 流式(Workers AI 默认 @cf/meta/llama-3.3-70b-instruct-fp8-fast,AI_MODEL 可换,provider 抽象可切外部 API)、/chat 聊天 UI(三语磨砂)、Header 头像菜单 + Hero 入口、CSP 加 accounts.google.com。本地登录需 Google OAuth client id(origins 加 http://localhost:3000);流式用 preview:worker 验证。initOpenNextCloudflareForDev 已加 NODE_ENV 门控([ai] binding 曾致构建期 wrangler 代理索要凭据)。
+
 1. **① OpenNext/Cloudflare 部署打通** + logger 改造 + CI(先跑起来)
 2. **② 合规底线**:Turnstile + 安全头 + token 签名 + Cookie 同意
 3. **③ D1 第一个业务**:submission / waitlist / showcase 落库

@@ -260,5 +260,24 @@
   "Features": {
     "title": "機能",
     "description": "SerenAI のすべての機能は、やさしく効果的に癒すために設計されています。"
+  },
+  "Chat": {
+    "title": "SerenAI チャット",
+    "description": "SerenAI のAIパートナーと会話——24時間いつでも、あなたの気持ちをやさしく受け止める空間です。",
+    "signInTitle": "あなたの安心できる場所へようこそ",
+    "signInDescription": "Google でログインして、AIパートナーとの会話を始めましょう。チャットはあなただけのものです。",
+    "signInError": "ログインに失敗しました。もう一度お試しください。",
+    "newChat": "新しいチャット",
+    "delete": "削除",
+    "cancel": "キャンセル",
+    "confirmDelete": "この会話を削除しますか?",
+    "inputPlaceholder": "今の気持ちを聞かせてください…",
+    "send": "送信",
+    "stop": "停止",
+    "emptyState": "新しい会話を始めましょう——やさしく、あなたの話を聞かせてください。",
+    "emptyConversations": "まだ会話がありません",
+    "errorSend": "メッセージを送信できませんでした。もう一度お試しください。",
+    "logout": "ログアウト",
+    "newConversation": "新しい会話"
   }
 }

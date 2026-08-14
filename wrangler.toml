@@ -27,6 +27,15 @@ preview_database_id = "local-db"
 binding = "BUCKET"
 bucket_name = "nextjs-starter-assets"
 
+# Workers AI — the emotional-companion chat model. In production the worker
+# runs against the real Workers AI API automatically; local `wrangler dev`
+# uses workerd's local inference. (`remote = true` would force the real API
+# in local dev but requires Cloudflare credentials at build time, which
+# breaks CI — add it back only for credentialed local testing.)
+# Model override via AI_MODEL env.
+[ai]
+binding = "AI"
+
 # ---------------------------------------------------------------------------
 # Future phases (see biz.md):
 #

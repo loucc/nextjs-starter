@@ -1,7 +1,7 @@
 "use client";
 
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 // Floating glow particles (positions/sizes/delays tuned by hand).
 const PARTICLES = [
@@ -99,14 +99,13 @@ export default function Hero() {
 
         {/* bottom-right buttons */}
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            aria-label={`${t("ctaTry")} (coming soon)`}
+          <Link
+            href="/chat"
+            aria-label={t("ctaTry")}
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-400 to-violet-400 px-9 py-3 text-sm font-light tracking-wide text-white shadow-[0_10px_30px_-8px_rgba(96,165,250,0.6),0_0_24px_rgba(167,139,250,0.4)] transition-all duration-300 hover:scale-[1.05] hover:brightness-105 active:scale-[0.98]"
           >
             {t("ctaTry")}
-          </a>
+          </Link>
           <Link
             href="/features"
             className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-night-card/50 dark:text-slate-300 dark:hover:text-blue-300"

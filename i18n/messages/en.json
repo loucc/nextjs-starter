@@ -260,5 +260,24 @@
   "Features": {
     "title": "Features",
     "description": "Everything SerenAI does, designed to help you heal — gently and effectively."
+  },
+  "Chat": {
+    "title": "SerenAI Chat",
+    "description": "Talk to your SerenAI emotional companion — a safe, gentle space for your feelings, available 24/7.",
+    "signInTitle": "Welcome to your safe space",
+    "signInDescription": "Sign in with Google to start a conversation with your AI companion. Your chats stay private and yours alone.",
+    "signInError": "Sign-in failed. Please try again.",
+    "newChat": "New chat",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirmDelete": "Delete this conversation?",
+    "inputPlaceholder": "Share what's on your mind…",
+    "send": "Send",
+    "stop": "Stop",
+    "emptyState": "Start a new conversation — I'm here to listen, gently and without judgment.",
+    "emptyConversations": "No conversations yet",
+    "errorSend": "Failed to send your message. Please try again.",
+    "logout": "Log out",
+    "newConversation": "New conversation"
   }
 }

@@ -29,3 +29,10 @@ UNSUBSCRIBE_SECRET=
 # Bearer secret for the admin asset upload/list API (/api/assets).
 # Unset = upload API disabled (401). Configure before production.
 ASSET_UPLOAD_SECRET=
+
+# Secret for signing login session cookies (long random string in production).
+# Rotating/changing this signs every user out.
+SESSION_SECRET=
+
+# Workers AI chat model override (default: @cf/meta/llama-3.3-70b-instruct-fp8-fast)
+AI_MODEL=
