@@ -32,6 +32,6 @@ export const siteConfig: SiteConfig = {
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
-    apple: "/logo.png", // TODO: regenerate apple-touch-icon with SerenAI branding
+    apple: "/logo.png",
   },
 }

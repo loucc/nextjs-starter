@@ -96,5 +96,10 @@ export async function constructMetadata({
         follow: !noIndex,
       },
     },
+    icons: {
+      icon: siteConfig.icons.icon,
+      shortcut: siteConfig.icons.shortcut,
+      apple: siteConfig.icons.apple,
+    },
   }
 }
