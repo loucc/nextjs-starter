@@ -16,7 +16,9 @@ describe("getPlanActionUrl", () => {
     expect(getPlanActionUrl("pro", undefined)).toBe("/");
   });
 
-  it("routes the business plan to a mailto contact", () => {
-    expect(getPlanActionUrl("business")).toMatch(/^mailto:/);
+  it("falls back to / for the business plan (no contact email configured)", () => {
+    // socialLinks were cleared with the rebrand — until a contact email is
+    // added back to siteConfig, the business CTA falls back to the root.
+    expect(getPlanActionUrl("business")).toBe("/");
   });
 });

@@ -1,9 +1,5 @@
 import { SiteConfig } from "@/types/siteConfig";
 
-const TWITTER_URL = 'https://x.com/weijunext'
-const BSKY_URL = 'https://bsky.app/profile/judewei.bsky.social'
-const EMAIL_URL = 'weijunext@gmail.com'
-
 export const siteConfig: SiteConfig = {
   name: "SerenAI",
   tagLine: 'Your AI emotional companion',
@@ -12,16 +8,11 @@ export const siteConfig: SiteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://nextjsstarter.io",
   authors: [
     {
-      name: "weijunext",
-      url: "https://weijunext.com",
+      name: "SerenAI",
+      url: process.env.NEXT_PUBLIC_SITE_URL || "https://nextjsstarter.io",
     }
   ],
-  creator: '@weijunext',
-  socialLinks: {
-    twitter: TWITTER_URL,
-    bluesky: BSKY_URL,
-    email: EMAIL_URL
-  },
+  creator: '',
   themeColors: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },

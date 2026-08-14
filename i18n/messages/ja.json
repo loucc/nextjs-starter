@@ -57,7 +57,6 @@
       "title": "SerenAI のニュースレターに登録する",
       "description": "SerenAI の最新ニュースと更新情報を入手します。",
       "defaultErrorMessage": "有効なメールアドレスを入力してください。",
-      "successMessage": "登録が完了しました。",
       "errorMessage": "登録に失敗しました。",
       "errorMessage2": "登録に失敗しました。少し待ってから再試行してください。",
       "subscribe": "登録する",

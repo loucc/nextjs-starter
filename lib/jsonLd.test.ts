@@ -8,13 +8,17 @@ import {
 } from "./jsonLd";
 
 describe("organizationJsonLd", () => {
-  it("builds an Organization with url, logo and sameAs", () => {
+  it("builds an Organization with url and logo", () => {
     const data = organizationJsonLd();
     expect(data["@type"]).toBe("Organization");
     expect(data.name).toBeTruthy();
     expect(String(data.url)).toContain("http");
     expect(String(data.logo)).toContain("/logo.png");
-    expect(Array.isArray(data.sameAs)).toBe(true);
+  });
+
+  it("omits sameAs when no social links are configured", () => {
+    const data = organizationJsonLd();
+    expect(data.sameAs).toBeUndefined();
   });
 });
 

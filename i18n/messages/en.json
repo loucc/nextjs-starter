@@ -57,7 +57,6 @@
       "title": "Subscribe to our newsletter",
       "description": "Get the latest news and updates from SerenAI",
       "defaultErrorMessage": "Please enter a valid email address",
-      "successMessage": "Subscription successful",
       "errorMessage": "Subscription failed",
       "errorMessage2": "Subscription failed. Please try again later.",
       "subscribe": "Subscribe",
