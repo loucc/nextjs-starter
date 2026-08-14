@@ -110,11 +110,6 @@
     "title": "隐私政策",
     "description": "隐私政策"
   },
-  "Showcase": {
-    "title": "使用案例展示",
-    "description": "探索使用本 Next.js 启动模板构建的优秀产品和网站。",
-    "visitSite": "访问网站"
-  },
   "Submission": {
     "badge": "获得展示",
     "title": "提交您的产品",

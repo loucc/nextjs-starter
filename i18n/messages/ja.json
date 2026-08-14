@@ -110,11 +110,6 @@
     "title": "プライバシーポリシー",
     "description": "プライバシーポリシー"
   },
-  "Showcase": {
-    "title": "導入事例",
-    "description": "このNext.jsスターターテンプレートを使用して構築された素晴らしい製品とウェブサイトをご覧ください。",
-    "visitSite": "サイトを見る"
-  },
   "Submission": {
     "badge": "掲載されよう",
     "title": "製品を提出する",
