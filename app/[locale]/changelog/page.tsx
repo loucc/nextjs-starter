@@ -66,7 +66,7 @@ export default async function ChangelogPage({
 
       <div className="space-y-10">
         {entries.map((entry) => (
-          <article key={entry.version} className="relative pl-6 border-l-2 border-line dark:border-slate-700">
+          <article key={entry.version} className="relative pl-6 border-l-2 border-line dark:border-night-line">
             <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-violet-400" />
             <header className="flex flex-wrap items-baseline gap-3 mb-2">
               <h2 className="text-xl font-bold text-text-main dark:text-gray-200">

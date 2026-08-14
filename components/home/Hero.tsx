@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-center overflow-hidden px-4 py-16">
       {/* soft gradient backdrop */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-healing-blue via-healing-mist to-healing-purple/60 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-950" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-healing-blue via-healing-mist to-healing-purple/60 dark:from-night dark:via-night-card/50 dark:to-night" />
 
       {/* ambient light blobs */}
       <div className="absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-healing-mist blur-3xl dark:bg-blue-500/10" />
@@ -90,7 +90,7 @@ export default function Hero() {
           {points.map((point) => (
             <span
               key={point}
-              className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300"
+              className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm dark:border-white/10 dark:bg-night-card/50 dark:text-slate-300"
             >
               {point}
             </span>
@@ -109,7 +109,7 @@ export default function Hero() {
           </a>
           <Link
             href="/features"
-            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:text-blue-300"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/40 px-9 py-3 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm transition-colors duration-300 hover:text-blue-600 dark:border-white/10 dark:bg-night-card/50 dark:text-slate-300 dark:hover:text-blue-300"
           >
             {t("ctaLearn")}
           </Link>

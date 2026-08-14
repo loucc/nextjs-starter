@@ -62,7 +62,7 @@ export default async function TechnologyPage({
           return (
             <div
               key={section.title}
-              className="rounded-2xl border border-line/60 dark:border-slate-700/60 bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm p-8"
+              className="rounded-2xl border border-line/60 dark:border-night-line/70 bg-white/50 dark:bg-night-card/50 backdrop-blur-sm p-8"
             >
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 text-white mb-4">
                 <Icon className="w-6 h-6" />

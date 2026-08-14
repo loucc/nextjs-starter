@@ -89,8 +89,8 @@ export default async function PricingPage({
               key={plan.name}
               className={`relative flex flex-col rounded-[2rem] border p-8 backdrop-blur-md shadow-soft-glow transition-all duration-300 hover:-translate-y-1 ${
                 featured
-                  ? "border-blue-400/40 bg-blue-50/50 dark:border-blue-400/20 dark:bg-blue-900/10 shadow-xl shadow-blue-400/10"
-                  : "border-line/70 bg-white/60 dark:border-white/10 dark:bg-slate-800/40"
+                  ? "border-blue-400/40 bg-blue-50/50 dark:border-blue-400/20 dark:bg-night-card/60 shadow-xl shadow-blue-400/10"
+                  : "border-line/70 bg-white/60 dark:border-white/10 dark:bg-night-card/50"
               }`}
             >
               {featured && (
@@ -137,7 +137,7 @@ export default async function PricingPage({
                 className={`mt-8 inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-light tracking-wide transition-all duration-300 ${
                   featured
                     ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white shadow-lg shadow-blue-400/30 hover:scale-[1.03]"
-                    : "border border-white/60 bg-white/40 text-text-muted backdrop-blur-sm hover:text-blue-600 dark:border-white/10 dark:bg-slate-800/40 dark:text-gray-200 dark:hover:text-blue-300"
+                    : "border border-white/60 bg-white/40 text-text-muted backdrop-blur-sm hover:text-blue-600 dark:border-white/10 dark:bg-night-card/50 dark:text-gray-200 dark:hover:text-blue-300"
                 }`}
               >
                 {planId === "free"

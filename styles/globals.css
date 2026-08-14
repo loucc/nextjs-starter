@@ -46,6 +46,9 @@
   --color-text-main: #1e293b; /* 文字: 主深灰黑 */
   --color-text-muted: #64748b; /* 文字: 辅助浅灰 */
   --color-line: #e2e8f0; /* 最弱描边灰 */
+  --color-night: #121621; /* 深色模式: 柔黑底色 */
+  --color-night-card: #1e2533; /* 深色模式: 卡片面 */
+  --color-night-line: #2a3448; /* 深色模式: 低对比描边 */
   --color-page-gradient: #fafbff; /* 页面渐变底色 */
   --shadow-soft-glow: 0 12px 32px -8px rgba(100, 116, 139, 0.08),
     0 2px 6px rgba(30, 41, 59, 0.03); /* 漫反射浅光影 */
@@ -142,37 +145,37 @@ html {
   }
   
   .dark {
-    --background: 223.8136 0.0000% 3.9388%;
+    --background: 224 29% 10%; /* #121621 柔黑 */
     --foreground: 223.8136 0.0004% 98.0256%;
-    --card: 223.8136 0.0000% 9.0527%;
+    --card: 220 26% 16%; /* #1e2533 深色卡片 */
     --card-foreground: 223.8136 0.0004% 98.0256%;
-    --popover: 223.8136 0.0000% 14.9382%;
+    --popover: 220 26% 16%;
     --popover-foreground: 223.8136 0.0004% 98.0256%;
     --primary: 223.8136 0.0001% 89.8161%;
     --primary-foreground: 223.8136 0.0000% 9.0527%;
-    --secondary: 223.8136 0.0000% 14.9382%;
+    --secondary: 220 26% 16%;
     --secondary-foreground: 223.8136 0.0004% 98.0256%;
-    --muted: 223.8136 0.0000% 14.9382%;
+    --muted: 220 26% 16%;
     --muted-foreground: 223.8136 0.0000% 63.0163%;
-    --accent: 223.8136 0.0000% 25.0471%;
+    --accent: 224 24% 21%;
     --accent-foreground: 223.8136 0.0004% 98.0256%;
     --destructive: 358.7594 101.8439% 69.8357%;
     --destructive-foreground: 223.8136 0.0004% 98.0256%;
-    --border: 223.8136 0.0000% 15.5096%;
-    --input: 223.8136 0.0000% 20.3885%;
+    --border: 224 24% 21%;
+    --input: 224 24% 21%;
     --ring: 223.8136 0.0000% 45.1519%;
     --chart-1: 211.7880 101.9718% 78.6759%;
     --chart-2: 217.4076 91.3672% 59.5787%;
     --chart-3: 221.4336 86.3731% 54.0624%;
     --chart-4: 223.6587 78.7180% 47.8635%;
     --chart-5: 226.5426 70.0108% 39.9224%;
-    --sidebar: 223.8136 0.0000% 9.0527%;
+    --sidebar: 220 26% 16%;
     --sidebar-foreground: 223.8136 0.0004% 98.0256%;
     --sidebar-primary: 225.3451 84.0953% 48.9841%;
     --sidebar-primary-foreground: 223.8136 0.0004% 98.0256%;
-    --sidebar-accent: 223.8136 0.0000% 14.9382%;
+    --sidebar-accent: 224 24% 21%;
     --sidebar-accent-foreground: 223.8136 0.0004% 98.0256%;
-    --sidebar-border: 223.8136 0.0000% 15.5096%;
+    --sidebar-border: 224 24% 21%;
     --sidebar-ring: 223.8136 0.0000% 32.1993%;
     --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -225,10 +228,11 @@ body {
 }
 
 .dark body {
+  background-color: var(--color-night);
   background-image:
-    radial-gradient(60rem 40rem at 0% 0%, hsl(224 60% 12% / 0.55), transparent 60%),
-    radial-gradient(50rem 36rem at 100% 12%, hsl(252 55% 14% / 0.5), transparent 60%),
-    radial-gradient(70rem 46rem at 50% 110%, hsl(224 50% 10% / 0.5), transparent 65%);
+    radial-gradient(60rem 40rem at 0% 0%, hsl(224 40% 16% / 0.5), transparent 60%),
+    radial-gradient(50rem 36rem at 100% 12%, hsl(252 35% 18% / 0.45), transparent 60%),
+    radial-gradient(70rem 46rem at 50% 110%, hsl(224 30% 13% / 0.5), transparent 65%);
 }
 
 ::selection {
@@ -237,6 +241,6 @@ body {
 }
 
 .dark ::selection {
-  background-color: hsl(251 60% 35%);
+  background-color: hsl(251 42% 40%);
   color: hsl(0 0% 96%);
 }

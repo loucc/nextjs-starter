@@ -33,7 +33,7 @@ export default function MobileMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="w-64 rounded-2xl border-white/40 dark:border-white/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl"
+          className="w-64 rounded-2xl border-white/40 dark:border-white/10 bg-white/80 dark:bg-night/80 backdrop-blur-xl"
         >
           <DropdownMenuLabel>
             <I18nLink

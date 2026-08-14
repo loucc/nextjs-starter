@@ -76,13 +76,13 @@ const MDXComponents: MDXComponentsProps = {
   ),
   code: (props) => (
     <code
-      className="bg-healing-mist/80 dark:bg-gray-700 rounded px-2 py-1 font-mono text-sm"
+      className="bg-healing-mist/80 dark:bg-night-card rounded px-2 py-1 font-mono text-sm"
       {...props}
     />
   ),
   pre: (props) => (
     <pre
-      className="rounded-lg p-4 overflow-x-auto my-4 bg-healing-mist/60 dark:bg-gray-800"
+      className="rounded-lg p-4 overflow-x-auto my-4 bg-healing-mist/60 dark:bg-night/70"
       {...props}
     />
   ),
@@ -107,13 +107,13 @@ const MDXComponents: MDXComponentsProps = {
   tr: (props) => <tr className="border-t border-line" {...props} />,
   th: (props) => (
     <th
-      className="px-6 py-3 font-bold text-left bg-healing-mist/60 dark:bg-gray-700 [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="px-6 py-3 font-bold text-left bg-healing-mist/60 dark:bg-night-card [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     />
   ),
   td: (props) => (
     <td
-      className="px-6 py-4 text-left border-t border-line dark:border-gray-700 [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="px-6 py-4 text-left border-t border-line dark:border-night-line [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     />
   ),

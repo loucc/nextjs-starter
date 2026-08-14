@@ -26,7 +26,7 @@ export default async function Footer() {
   const contactEmail = process.env.ADMIN_EMAIL;
 
   return (
-    <footer className="border-t border-line/70 bg-healing-mist/70 dark:border-slate-800/70 dark:bg-slate-900/30 backdrop-blur-sm">
+    <footer className="border-t border-line/70 bg-healing-mist/70 dark:border-night-line/60 dark:bg-night/30 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand + intro */}
@@ -112,7 +112,7 @@ export default async function Footer() {
         </div>
 
         {/* hairline divider */}
-        <div className="mt-12 border-t border-line/70 dark:border-slate-800/70 pt-6">
+        <div className="mt-12 border-t border-line/70 dark:border-night-line/60 pt-6">
           <p className="text-center text-xs font-light tracking-wide text-text-muted/80 dark:text-slate-500">
             {tFooter("Copyright", {
               year: new Date().getFullYear(),
