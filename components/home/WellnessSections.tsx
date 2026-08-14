@@ -1,15 +1,8 @@
-import { Heart, Moon, Sparkles } from "lucide-react";
+import FeatureGrid from "@/components/home/FeatureGrid";
 import { useTranslations } from "next-intl";
-
-const FEATURE_ICONS = [Heart, Sparkles, Moon];
 
 export default function WellnessSections() {
   const t = useTranslations("Home");
-
-  const features = t.raw("features") as Array<{
-    title: string;
-    description: string;
-  }>;
 
   return (
     <>
@@ -22,32 +15,12 @@ export default function WellnessSections() {
         </div>
       </section>
 
-      {/* Feature trio — 全天候AI情绪疏导 */}
+      {/* Feature grid — 六项产品功能 */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 dark:text-gray-200 mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 dark:text-gray-200 mb-14">
           {t("careTitle")}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
-            const Icon = FEATURE_ICONS[index % FEATURE_ICONS.length];
-            return (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/50 p-8 backdrop-blur-sm"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 text-white mb-4">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-gray-200 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        <FeatureGrid />
       </section>
 
       {/* Closing CTA — 让AI，成为你的专属心灵树洞 */}

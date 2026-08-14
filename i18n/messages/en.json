@@ -86,20 +86,6 @@
     "quoteTitle": "Embrace every emotion, gently heal yourself",
     "careTitle": "24/7 AI emotional guidance to dissolve stress and anxiety",
     "ctaTitle": "Let AI become your safe haven for every feeling",
-    "features": [
-      {
-        "title": "Professional mood healing",
-        "description": "Science-informed techniques to process difficult feelings and restore your balance."
-      },
-      {
-        "title": "Emotional guidance",
-        "description": "Thoughtful, non-judgmental conversations that help you understand your feelings."
-      },
-      {
-        "title": "Round-the-clock companionship",
-        "description": "Available 24/7 — because feelings don't keep office hours."
-      }
-    ],
     "heroPoints": [
       "24/7 emotional guidance",
       "Heartful companionship",
@@ -107,7 +93,33 @@
       "Mood healing"
     ],
     "ctaTry": "Try now",
-    "ctaLearn": "Learn more"
+    "ctaLearn": "Learn more",
+    "featureCards": [
+      {
+        "title": "AI Venting",
+        "description": "Say it all — every grievance, every worry — to an AI that listens with endless patience."
+      },
+      {
+        "title": "Smart Emotion Analysis",
+        "description": "Reads tone and emotional cues to reveal what's beneath the surface."
+      },
+      {
+        "title": "Stress Guidance",
+        "description": "Science-backed relief methods and breathing exercises to hit pause on tension."
+      },
+      {
+        "title": "Bedtime Healing",
+        "description": "Gentle wind-down companionship and relaxation to help you sleep at ease."
+      },
+      {
+        "title": "Emotion Journal",
+        "description": "Record your feelings day by day — traceable, understandable, healing."
+      },
+      {
+        "title": "Mind Healing",
+        "description": "Professional healing techniques to gently repair and restore inner calm."
+      }
+    ]
   },
   "Blog": {
     "title": "Blog Posts",
