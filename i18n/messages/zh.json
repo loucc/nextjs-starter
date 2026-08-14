@@ -30,6 +30,10 @@
         "href": "https://nexty.dev",
         "target": "_blank",
         "rel": "noopener noreferrer"
+      },
+      {
+        "name": "更新日志",
+        "href": "/changelog"
       }
     ]
   },
@@ -254,5 +258,11 @@
         "a": "我们通过安全的支付服务商接受主流信用卡,企业版支持对公转账开票。"
       }
     ]
+  },
+  "Changelog": {
+    "title": "更新日志",
+    "description": "每一次更新与改进,尽收于此。跟随产品一起成长。",
+    "subscribeHint": "保持关注 — 订阅",
+    "rss": "RSS 订阅源"
   }
 }

@@ -30,6 +30,10 @@
         "href": "https://nexty.dev",
         "target": "_blank",
         "rel": "noopener noreferrer"
+      },
+      {
+        "name": "更新履歴",
+        "href": "/changelog"
       }
     ]
   },
@@ -254,5 +258,11 @@
         "a": "主要なクレジットカードに対応しています。ビジネスプランでは請求書払いも可能です。"
       }
     ]
+  },
+  "Changelog": {
+    "title": "更新履歴",
+    "description": "すべてのアップデートと改善を一か所に。製品の進化を追いかけよう。",
+    "subscribeHint": "最新情報をお届け — 購読する",
+    "rss": "RSS フィード"
   }
 }

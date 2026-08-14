@@ -81,7 +81,7 @@
 
 ## 五、建议实施顺序
 
-> **2026-08-14 进度:① 部署 ✅ ② 合规 ✅ ③ D1(submissions/waitlist/showcase)✅ ④-1 错误页+JSON-LD ✅ ④-2 测试体系(vitest 57 用例)✅ ④-3 R2 下载资源托管 ✅**。④-4 动态 OG 已实现验证但搁置(worker gzip 3.93MiB 超免费版 3MiB → origin/feat/dynamic-og,付费计划后合并)。④-5 Pricing 页面 ✅(三档定价+FAQ+FAQPage JSON-LD,三语,支付链接 NEXT_PUBLIC_PRICING_CHECKOUT_URL,Header/sitemap 已接入)。真实部署仍需 Cloudflare API Token / D1 真实 database_id / 各 wrangler secrets(见 wrangler.toml / README)。
+> **2026-08-14 进度:① 部署 ✅ ② 合规 ✅ ③ D1(submissions/waitlist/showcase)✅ ④-1 错误页+JSON-LD ✅ ④-2 测试体系(vitest 57 用例)✅ ④-3 R2 下载资源托管 ✅**。④-4 动态 OG 已实现验证但搁置(worker gzip 3.93MiB 超免费版 3MiB → origin/feat/dynamic-og,付费计划后合并)。④-5 Pricing 页面 ✅(三档定价+FAQ+FAQPage JSON-LD,三语,支付链接 NEXT_PUBLIC_PRICING_CHECKOUT_URL,Header/sitemap 已接入)。④-6 Changelog ✅(MDX 管线复用,三语时间线 + RSS /api/changelog/rss,Header/sitemap 已接入)。真实部署仍需 Cloudflare API Token / D1 真实 database_id / 各 wrangler secrets(见 wrangler.toml / README)。
 
 1. **① OpenNext/Cloudflare 部署打通** + logger 改造 + CI(先跑起来)
 2. **② 合规底线**:Turnstile + 安全头 + token 签名 + Cookie 同意

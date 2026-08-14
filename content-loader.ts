@@ -31,6 +31,10 @@ export const blogModules = normalize(
   import.meta.glob("blogs/**/*.mdx", { eager: true })
 );
 
+export const changelogModules = normalize(
+  import.meta.glob("changelogs/**/*.mdx", { eager: true })
+);
+
 export const pageModules = normalize(
   import.meta.glob("content/**/*.mdx", { eager: true })
 );

@@ -30,6 +30,10 @@
         "href": "https://nexty.dev",
         "target": "_blank",
         "rel": "noopener noreferrer"
+      },
+      {
+        "name": "Changelog",
+        "href": "/changelog"
       }
     ]
   },
@@ -254,5 +258,11 @@
         "a": "We accept major credit cards via our secure payment provider, and offer invoicing on the Business plan."
       }
     ]
+  },
+  "Changelog": {
+    "title": "Changelog",
+    "description": "Every update and improvement, in one place. Follow along as the product evolves.",
+    "subscribeHint": "Stay up to date — subscribe to the",
+    "rss": "RSS feed"
   }
 }

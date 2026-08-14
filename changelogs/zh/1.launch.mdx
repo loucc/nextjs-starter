@@ -1,0 +1,26 @@
+---
+version: v1.0.0
+date: 2026-08-14
+title: 首发版本
+tags: launch
+---
+
+## 🚀 新内容
+
+首个公开版本上线!包含以下内容:
+
+### 功能
+
+- **多语言站点(en / zh / ja)** — 完整国际化,自动语言检测
+- **MDX 博客** — Markdown 写作,静态页面呈现
+- **邮件订阅** — 双重邮箱校验与签名退订链接
+- **Cloudflare 原生架构** — 运行在 Workers 上,数据用 D1(SQLite)与 R2(对象存储)
+- **机器人防护** — 所有表单接入 Cloudflare Turnstile
+- **Cookie 同意** — 分析/广告脚本仅在明确同意后加载(GDPR/CCPA)
+
+### 技术细节
+
+- Next.js 16 + React 19,通过 OpenNext 部署在 Cloudflare Workers
+- 默认隐私友好:安全响应头与生产环境严格 CSP
+
+感谢从第一天就陪伴我们!🎉
