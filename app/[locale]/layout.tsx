@@ -6,22 +6,21 @@ import AnalyticsGate from "@/components/AnalyticsGate";
 import CookieConsent from "@/components/CookieConsent";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import HtmlLang from "@/components/HtmlLang";
 import { LanguageDetectionAlert } from "@/components/LanguageDetectionAlert";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteConfig } from "@/config/site";
-import { DEFAULT_LOCALE, Locale, routing } from "@/i18n/routing";
+import { Locale, routing } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { notFound } from "next/navigation";
 
 type MetadataProps = {
@@ -44,10 +43,6 @@ export async function generateMetadata({
   });
 }
 
-export const viewport: Viewport = {
-  themeColor: siteConfig.themeColors,
-};
-
 export default async function LocaleLayout({
   children,
   params,
@@ -69,53 +64,41 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale || DEFAULT_LOCALE} suppressHydrationWarning>
-      <head>
-        <Script
-          id="theme-init"
-          src="/theme-init.js"
-          strategy="beforeInteractive"
-        />
-      </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background flex flex-col font-sans antialiased"
-        )}
-      >
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme={siteConfig.defaultNextTheme}
-            enableSystem
-          >
-            {messages.LanguageDetection && <LanguageDetectionAlert />}
-            {messages.Header && <Header />}
+    <>
+      <HtmlLang locale={locale} />
+      <NextIntlClientProvider messages={messages}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme={siteConfig.defaultNextTheme}
+          enableSystem
+        >
+          {messages.LanguageDetection && <LanguageDetectionAlert />}
+          {messages.Header && <Header />}
 
-            <main className="flex-1 flex flex-col items-center">
-              {children}
-            </main>
+          <main className="flex-1 flex flex-col items-center">
+            {children}
+          </main>
 
-            {messages.Footer && <Footer />}
-            {messages.CookieConsent && <CookieConsent />}
-          </ThemeProvider>
-        </NextIntlClientProvider>
-        <TailwindIndicator />
-        {process.env.NODE_ENV === "development" ? (
-          <></>
-        ) : (
-          <>
-            {/* Vercel Analytics removed (not meaningful on Cloudflare) —
-                Cloudflare Web Analytics is planned (see biz.md P1).
-                All scripts are gated on cookie consent (AnalyticsGate). */}
-            <AnalyticsGate>
-              <BaiDuAnalytics />
-              <GoogleAnalytics />
-              <GoogleAdsense />
-              <PlausibleAnalytics />
-            </AnalyticsGate>
-          </>
-        )}
-      </body>
-    </html>
+          {messages.Footer && <Footer />}
+          {messages.CookieConsent && <CookieConsent />}
+        </ThemeProvider>
+      </NextIntlClientProvider>
+      <TailwindIndicator />
+      {process.env.NODE_ENV === "development" ? (
+        <></>
+      ) : (
+        <>
+          {/* Vercel Analytics removed (not meaningful on Cloudflare) —
+              Cloudflare Web Analytics is planned (see biz.md P1).
+              All scripts are gated on cookie consent (AnalyticsGate). */}
+          <AnalyticsGate>
+            <BaiDuAnalytics />
+            <GoogleAnalytics />
+            <GoogleAdsense />
+            <PlausibleAnalytics />
+          </AnalyticsGate>
+        </>
+      )}
+    </>
   );
 }
