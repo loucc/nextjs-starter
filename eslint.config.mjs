@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
     ".vscode/**",
     ".claude/**",
     ".github/**",
+    "coverage/**", // vitest coverage output
     "out/**",
     "build/**",
     "next-env.d.ts",

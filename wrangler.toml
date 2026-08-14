@@ -19,13 +19,15 @@ database_name = "nextjs-starter"
 database_id = "00000000-0000-0000-0000-000000000000"
 preview_database_id = "local-db"
 
+# R2 (object storage) — download assets (trial builds, press kit, docs),
+# served via /api/download/... For production: create the bucket in the
+# Cloudflare dashboard first; local dev uses automatic emulation.
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "nextjs-starter-assets"
+
 # ---------------------------------------------------------------------------
 # Future phases (see biz.md):
-#
-# R2 (object storage) — uploads, blog images, downloads
-# [[r2_buckets]]
-# binding = "BUCKET"
-# bucket_name = "<name>"
 #
 # KV (incremental cache for ISR, when enabled in open-next.config.ts)
 # [[kv_namespaces]]

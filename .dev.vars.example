@@ -25,3 +25,7 @@ TURNSTILE_SECRET_KEY=
 
 # Secret for signing unsubscribe tokens (long random string in production)
 UNSUBSCRIBE_SECRET=
+
+# Bearer secret for the admin asset upload/list API (/api/assets).
+# Unset = upload API disabled (401). Configure before production.
+ASSET_UPLOAD_SECRET=

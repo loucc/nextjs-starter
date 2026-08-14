@@ -217,6 +217,29 @@ pnpm db:migrate:local   # 将 migrations/ 应用到本地 SQLite(.wrangler/state
 pnpm db:migrate:remote  # 将 migrations/ 应用到生产 D1 数据库
 ```
 
+**R2 下载资源(trial 包、媒体资料、文档):**
+
+生产环境先在控制台创建名为 `nextjs-starter-assets` 的 R2 桶(绑定已在
+`wrangler.toml` 配置;本地开发自动模拟)。设置 `ASSET_UPLOAD_SECRET`
+(wrangler secret)后:
+
+```bash
+# 上传(仅管理员,Bearer 密钥)
+curl -X POST http://localhost:8787/api/assets \
+  -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  -F "file=@./press-kit.pdf"
+
+# 列出已上传资源
+curl -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  http://localhost:8787/api/assets
+
+# 下载(公开)
+curl http://localhost:8787/api/download/assets/press-kit.pdf
+```
+
+也可用 wrangler 手动上传:
+`pnpm dlx wrangler r2 object put nextjs-starter-assets/assets/foo.pdf --file=./foo.pdf`
+
 **本地预览(workerd 运行时):**
 
 ```bash

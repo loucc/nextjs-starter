@@ -224,6 +224,29 @@ pnpm db:migrate:local   # applies migrations/ to the local SQLite (.wrangler/sta
 pnpm db:migrate:remote  # applies migrations/ to the production D1 database
 ```
 
+**R2 download assets (trial builds, press kit, docs):**
+
+For production, create an R2 bucket named `nextjs-starter-assets` in the
+dashboard (binding is already configured in `wrangler.toml`; local dev uses
+automatic emulation). Then set `ASSET_UPLOAD_SECRET` (wrangler secret) and:
+
+```bash
+# Upload (admin only, Bearer secret required)
+curl -X POST http://localhost:8787/api/assets \
+  -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  -F "file=@./press-kit.pdf"
+
+# List uploaded assets
+curl -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  http://localhost:8787/api/assets
+
+# Download (public)
+curl http://localhost:8787/api/download/assets/press-kit.pdf
+```
+
+Manual upload via wrangler also works:
+`pnpm dlx wrangler r2 object put nextjs-starter-assets/assets/foo.pdf --file=./foo.pdf`
+
 **Local preview (workerd runtime):**
 
 ```bash

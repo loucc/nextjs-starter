@@ -222,6 +222,29 @@ pnpm db:migrate:local   # migrations/ をローカル SQLite(.wrangler/state)に
 pnpm db:migrate:remote  # migrations/ を本番 D1 データベースに適用
 ```
 
+**R2 ダウンロードアセット(トライアル版、プレスキット、ドキュメント):**
+
+本番環境ではダッシュボードで `nextjs-starter-assets` という名前の R2 バケットを
+作成します(バインディングは `wrangler.toml` に設定済み。ローカル開発は自動
+エミュレーション)。`ASSET_UPLOAD_SECRET`(wrangler secret)を設定後:
+
+```bash
+# アップロード(管理者のみ、Bearer シークレット)
+curl -X POST http://localhost:8787/api/assets \
+  -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  -F "file=@./press-kit.pdf"
+
+# アップロード済み一覧
+curl -H "Authorization: Bearer $ASSET_UPLOAD_SECRET" \
+  http://localhost:8787/api/assets
+
+# ダウンロード(公開)
+curl http://localhost:8787/api/download/assets/press-kit.pdf
+```
+
+wrangler での手動アップロードも可能:
+`pnpm dlx wrangler r2 object put nextjs-starter-assets/assets/foo.pdf --file=./foo.pdf`
+
 **ローカルプレビュー(workerd ランタイム):**
 
 ```bash
