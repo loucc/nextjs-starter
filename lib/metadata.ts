@@ -31,6 +31,14 @@ export async function constructMetadata({
   const pageTitle = title || t(`title`)
   const pageDescription = description || t(`description`)
 
+  // Short SEO description for social snippets (twitter cards). Used when
+  // the page uses the site-level description; pages with their own copy
+  // keep their own description.
+  const usesSiteDescription = !description || description === t(`description`);
+  const twitterDescription = usesSiteDescription
+    ? t(`shortDescription`) || pageDescription
+    : pageDescription;
+
   // build full title
   const finalTitle = page === 'Home'
     ? `${pageTitle} - ${t('tagLine')}`
@@ -83,7 +91,7 @@ export async function constructMetadata({
     twitter: {
       card: 'summary_large_image',
       title: finalTitle,
-      description: pageDescription,
+      description: twitterDescription,
       site: `${siteConfig.url}${pageURL === '/' ? '' : pageURL}`,
       images: imageUrls,
       creator: siteConfig.creator,
