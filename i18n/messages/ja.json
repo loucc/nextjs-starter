@@ -110,19 +110,6 @@
     "title": "プライバシーポリシー",
     "description": "プライバシーポリシー"
   },
-  "Submission": {
-    "badge": "掲載されよう",
-    "title": "製品を提出する",
-    "description": "このスターターで素晴らしいものを作りましたか？コミュニティと共有して、ショーケースに掲載されましょう。",
-    "productNameLabel": "製品名",
-    "productNamePlaceholder": "私の素晴らしいプロジェクト",
-    "productUrlLabel": "製品URL",
-    "submit": "製品を提出",
-    "submitting": "送信中...",
-    "successMessage": "ありがとうございます！提出を受け付けました。まもなく確認いたします。",
-    "errorMessage": "エラーが発生しました。もう一度お試しください。",
-    "turnstileRequired": "送信前にセキュリティ確認を完了してください"
-  },
   "CookieConsent": {
     "title": "Cookie の使用について",
     "description": "当サイトは機能に必要な Cookie に加え、同意いただいた場合のみ分析・広告 Cookie を使用します。すべてを受け入れるか、必要なものだけに限定するかを選択できます。",

@@ -110,19 +110,6 @@
     "title": "Privacy Policy",
     "description": "Privacy Policy"
   },
-  "Submission": {
-    "badge": "Get Featured",
-    "title": "Submit Your Product",
-    "description": "Built something awesome with this starter? Share your product with our community and get featured on our showcase.",
-    "productNameLabel": "Product Name",
-    "productNamePlaceholder": "My Awesome Project",
-    "productUrlLabel": "Product URL",
-    "submit": "Submit Product",
-    "submitting": "Submitting...",
-    "successMessage": "Thank you! Your submission has been received. We'll review it shortly.",
-    "errorMessage": "Something went wrong. Please try again.",
-    "turnstileRequired": "Please complete the security check before submitting"
-  },
   "CookieConsent": {
     "title": "We use cookies",
     "description": "We use essential cookies for site functionality and, with your consent, analytics and advertising cookies. You can accept all or only essential cookies.",

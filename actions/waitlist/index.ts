@@ -6,8 +6,8 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { verifyTurnstileToken } from '@/lib/turnstile';
 
 /**
- * Joins the waitlist. Unlike the product submission (which has an email
- * fallback), the waitlist has no other channel — it requires D1.
+ * Joins the waitlist. The waitlist has no email fallback channel — it
+ * requires D1 to be configured.
  */
 export async function joinWaitlist(formData: FormData) {
   try {

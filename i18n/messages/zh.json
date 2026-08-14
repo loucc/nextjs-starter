@@ -110,19 +110,6 @@
     "title": "隐私政策",
     "description": "隐私政策"
   },
-  "Submission": {
-    "badge": "获得展示",
-    "title": "提交您的产品",
-    "description": "用这套模板构建了出色的产品？与我们的社区分享您的作品，并在展示区获得曝光。",
-    "productNameLabel": "产品名称",
-    "productNamePlaceholder": "我的优秀项目",
-    "productUrlLabel": "产品链接",
-    "submit": "提交产品",
-    "submitting": "提交中...",
-    "successMessage": "感谢您的提交！我们会尽快审核。",
-    "errorMessage": "出了点问题，请重试。",
-    "turnstileRequired": "提交前请先完成安全验证"
-  },
   "CookieConsent": {
     "title": "我们使用 Cookie",
     "description": "本站使用必要的 Cookie 以保证网站功能,并在您同意的情况下使用分析和广告 Cookie。您可以选择接受全部或仅使用必要的 Cookie。",
