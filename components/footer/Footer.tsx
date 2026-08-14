@@ -26,7 +26,7 @@ export default async function Footer() {
   const contactEmail = process.env.ADMIN_EMAIL;
 
   return (
-    <footer className="border-t border-slate-200/70 bg-healing-blue/60 dark:border-slate-800/70 dark:bg-slate-900/30 backdrop-blur-sm">
+    <footer className="border-t border-line/70 bg-healing-mist/70 dark:border-slate-800/70 dark:bg-slate-900/30 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           {/* Brand + intro */}
@@ -44,21 +44,21 @@ export default async function Footer() {
                 width={32}
                 height={32}
               />
-              <span className="font-light tracking-[0.12em] text-slate-700 dark:text-slate-200">
+              <span className="font-light tracking-[0.12em] text-text-main dark:text-slate-200">
                 {siteConfig.name}
               </span>
             </I18nLink>
-            <p className="max-w-sm text-sm font-light leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="max-w-sm text-sm font-light leading-relaxed text-text-muted dark:text-slate-400">
               {tFooter("intro")}
             </p>
           </div>
 
           {/* Product nav */}
           <div className="md:col-span-3">
-            <h3 className="mb-4 text-sm font-medium tracking-wide text-slate-700 dark:text-slate-300">
+            <h3 className="mb-4 text-sm font-medium tracking-wide text-text-main dark:text-slate-300">
               {tFooter("productTitle")}
             </h3>
-            <ul className="space-y-2.5 text-sm font-light text-slate-500 dark:text-slate-400">
+            <ul className="space-y-2.5 text-sm font-light text-text-muted dark:text-slate-400">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <I18nLink
@@ -75,10 +75,10 @@ export default async function Footer() {
 
           {/* Support */}
           <div className="md:col-span-2">
-            <h3 className="mb-4 text-sm font-medium tracking-wide text-slate-700 dark:text-slate-300">
+            <h3 className="mb-4 text-sm font-medium tracking-wide text-text-main dark:text-slate-300">
               {tFooter("supportTitle")}
             </h3>
-            <ul className="space-y-2.5 text-sm font-light text-slate-500 dark:text-slate-400">
+            <ul className="space-y-2.5 text-sm font-light text-text-muted dark:text-slate-400">
               {supportLinks.map((link) => (
                 <li key={link.href}>
                   <I18nLink

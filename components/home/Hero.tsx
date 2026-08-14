@@ -5,13 +5,13 @@ import Link from "next/link";
 
 // Floating glow particles (positions/sizes/delays tuned by hand).
 const PARTICLES = [
-  { top: "18%", left: "12%", size: 6, delay: "0s", color: "bg-blue-300/60" },
-  { top: "30%", left: "82%", size: 8, delay: "1.4s", color: "bg-violet-300/60" },
-  { top: "64%", left: "8%", size: 5, delay: "2.6s", color: "bg-rose-200/70" },
-  { top: "72%", left: "88%", size: 7, delay: "0.8s", color: "bg-blue-200/70" },
-  { top: "12%", left: "46%", size: 4, delay: "3.4s", color: "bg-amber-200/80" },
-  { top: "80%", left: "38%", size: 5, delay: "2s", color: "bg-violet-200/70" },
-  { top: "42%", left: "94%", size: 4, delay: "4.2s", color: "bg-rose-300/50" },
+  { top: "18%", left: "12%", size: 6, delay: "0s", color: "bg-blue-300/50" },
+  { top: "30%", left: "82%", size: 8, delay: "1.4s", color: "bg-violet-300/50" },
+  { top: "64%", left: "8%", size: 5, delay: "2.6s", color: "bg-blue-200/60" },
+  { top: "72%", left: "88%", size: 7, delay: "0.8s", color: "bg-blue-200/60" },
+  { top: "12%", left: "46%", size: 4, delay: "3.4s", color: "bg-violet-200/70" },
+  { top: "80%", left: "38%", size: 5, delay: "2s", color: "bg-violet-200/60" },
+  { top: "42%", left: "94%", size: 4, delay: "4.2s", color: "bg-blue-100/70" },
 ];
 
 export default function Hero() {
@@ -21,12 +21,12 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-5rem)] w-full flex-col items-center justify-center overflow-hidden px-4 py-16">
       {/* soft gradient backdrop */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-healing-blue via-healing-purple/70 to-healing-pink/60 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-950" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-healing-blue via-healing-mist to-healing-purple/60 dark:from-slate-950 dark:via-indigo-950/30 dark:to-slate-950" />
 
       {/* ambient light blobs */}
-      <div className="absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-healing-cyan/80 blur-3xl dark:bg-blue-500/10" />
+      <div className="absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-healing-mist blur-3xl dark:bg-blue-500/10" />
       <div className="absolute -right-32 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-healing-purple blur-3xl dark:bg-violet-500/10" />
-      <div className="absolute left-1/2 top-0 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl dark:bg-amber-400/5" />
+      <div className="absolute left-1/2 top-0 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-healing-purple/60 blur-3xl dark:bg-blue-400/5" />
 
       {/* flowing glow particles */}
       {PARTICLES.map((p, i) => (
@@ -71,18 +71,18 @@ export default function Hero() {
           </linearGradient>
           <linearGradient id="hero-wave-2" x1="0" y1="0" x2="1" y2="0">
             <stop stopColor="#c4b5fd" />
-            <stop offset="1" stopColor="#f9a8d4" />
+            <stop offset="1" stopColor="#a5b4fc" />
           </linearGradient>
         </defs>
       </svg>
 
       {/* content */}
       <div className="relative flex w-full max-w-4xl flex-col items-center gap-8 text-center">
-        <h1 className="font-light tracking-[0.18em] text-slate-700 dark:text-slate-300 text-2xl sm:text-3xl">
+        <h1 className="font-light tracking-[0.18em] text-text-muted dark:text-slate-300 text-2xl sm:text-3xl">
           Seren<span className="bg-gradient-to-r from-blue-600 to-violet-500 bg-clip-text text-transparent font-normal">AI</span>
         </h1>
 
-        <p className="text-4xl font-semibold leading-snug tracking-tight text-slate-900 dark:text-gray-100 sm:text-5xl">
+        <p className="text-4xl font-semibold leading-snug tracking-tight text-text-main dark:text-gray-100 sm:text-5xl">
           {t("slogan")}
         </p>
 
@@ -90,7 +90,7 @@ export default function Hero() {
           {points.map((point) => (
             <span
               key={point}
-              className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-slate-600 backdrop-blur-sm dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300"
+              className="rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-sm font-light tracking-wide text-text-muted backdrop-blur-sm dark:border-white/10 dark:bg-slate-800/40 dark:text-slate-300"
             >
               {point}
             </span>

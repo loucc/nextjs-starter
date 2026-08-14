@@ -55,7 +55,7 @@ function Illustration({ index }: { index: number }) {
     default: // gentle flower
       return (
         <svg viewBox="0 0 64 64" className="h-14 w-14">
-          <circle cx="32" cy="32" r="6.5" fill="#fbcfe8" opacity="0.8" />
+          <circle cx="32" cy="32" r="6.5" fill="#c4b5fd" opacity="0.8" />
           {[0, 72, 144, 216, 288].map((angle) => (
             <ellipse
               key={angle}
@@ -88,19 +88,19 @@ export default function FeatureGrid() {
       {cards.map((card, index) => (
         <div
           key={card.title}
-          className="group relative overflow-hidden rounded-[2rem] border border-white/50 bg-white/50 p-8 shadow-soft-glow backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
+          className="group relative overflow-hidden rounded-[2rem] border border-line/70 bg-white/60 p-8 shadow-soft-glow backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-400/10 dark:border-white/10 dark:bg-slate-800/40"
         >
           {/* soft inner light */}
-          <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/70 to-violet-100/50 blur-2xl transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-400/10 dark:to-violet-400/10" />
+          <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-healing-blue to-healing-purple/60 blur-2xl transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-400/10 dark:to-violet-400/10" />
 
           <div className="relative">
-            <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100/70 to-violet-100/60 dark:from-blue-400/10 dark:to-violet-400/10">
+            <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-healing-blue/80 to-healing-purple dark:from-blue-400/10 dark:to-violet-400/10">
               <Illustration index={index} />
             </div>
-            <h3 className="mb-2 text-lg font-medium tracking-wide text-slate-800 dark:text-gray-200">
+            <h3 className="mb-2 text-lg font-medium tracking-wide text-text-main dark:text-gray-200">
               {card.title}
             </h3>
-            <p className="text-sm font-light leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="text-sm font-light leading-relaxed text-text-muted dark:text-slate-400">
               {card.description}
             </p>
           </div>

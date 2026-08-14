@@ -69,10 +69,10 @@ export default async function PricingPage({
       <JsonLd data={faqJsonLd(locale, faq)} />
 
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-gray-200">
+        <h1 className="text-4xl font-bold tracking-tight text-text-main dark:text-gray-200">
           {t("title")}
         </h1>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-text-muted dark:text-slate-400 max-w-2xl mx-auto">
           {t("description")}
         </p>
       </div>
@@ -90,7 +90,7 @@ export default async function PricingPage({
               className={`relative flex flex-col rounded-[2rem] border p-8 backdrop-blur-md shadow-soft-glow transition-all duration-300 hover:-translate-y-1 ${
                 featured
                   ? "border-blue-400/40 bg-blue-50/50 dark:border-blue-400/20 dark:bg-blue-900/10 shadow-xl shadow-blue-400/10"
-                  : "border-white/50 bg-white/50 dark:border-white/10 dark:bg-slate-800/40"
+                  : "border-line/70 bg-white/60 dark:border-white/10 dark:bg-slate-800/40"
               }`}
             >
               {featured && (
@@ -98,30 +98,30 @@ export default async function PricingPage({
                   {t("popular")}
                 </div>
               )}
-              <h2 className="text-xl font-semibold text-slate-900 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-text-main dark:text-gray-200">
                 {plan.name}
               </h2>
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              <p className="mt-1 text-sm text-text-muted dark:text-slate-400">
                 {plan.description}
               </p>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-bold text-slate-900 dark:text-gray-100">
+                <span className="text-4xl font-bold text-text-main dark:text-gray-100">
                   {plan.price}
                 </span>
-                <span className="text-sm text-slate-500 dark:text-slate-400">
+                <span className="text-sm text-text-muted dark:text-slate-400">
                   {t("period")}
                 </span>
               </div>
 
               <div className="mt-6 flex-grow">
-                <h3 className="text-sm font-semibold text-slate-900 dark:text-gray-200 mb-3">
+                <h3 className="text-sm font-semibold text-text-main dark:text-gray-200 mb-3">
                   {t("featuresTitle")}
                 </h3>
                 <ul className="space-y-2">
                   {plan.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
+                      className="flex items-start gap-2 text-sm text-text-muted dark:text-slate-400"
                     >
                       <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-blue-500" />
                       {feature}
@@ -152,16 +152,16 @@ export default async function PricingPage({
       </div>
 
       <div className="mt-20 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-gray-200 mb-8">
+        <h2 className="text-3xl font-bold text-center text-text-main dark:text-gray-200 mb-8">
           {t("faqTitle")}
         </h2>
         <div className="space-y-6">
           {faq.map((item) => (
             <div key={item.q}>
-              <h3 className="font-semibold text-slate-900 dark:text-gray-200">
+              <h3 className="font-semibold text-text-main dark:text-gray-200">
                 {item.q}
               </h3>
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+              <p className="mt-1 text-sm text-text-muted dark:text-slate-400">
                 {item.a}
               </p>
             </div>

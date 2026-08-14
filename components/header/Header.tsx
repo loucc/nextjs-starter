@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-3 z-50 px-4">
-      <nav className="mx-auto max-w-6xl flex items-center justify-between rounded-full border border-white/50 dark:border-white/10 bg-white/55 dark:bg-slate-900/40 backdrop-blur-xl shadow-soft-glow px-4 sm:px-6 py-2">
+      <nav className="mx-auto max-w-6xl flex items-center justify-between rounded-full border border-line/70 dark:border-white/10 bg-white/55 dark:bg-slate-900/40 backdrop-blur-xl shadow-soft-glow px-4 sm:px-6 py-2">
         {/* Logo */}
         <I18nLink
           href="/"
