@@ -103,7 +103,7 @@ export default function Hero() {
             href="#"
             onClick={(e) => e.preventDefault()}
             aria-label={`${t("ctaTry")} (coming soon)`}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-9 py-3 text-sm font-light tracking-wide text-white shadow-lg shadow-blue-400/30 transition-transform duration-300 hover:scale-[1.04]"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-400 to-violet-400 px-9 py-3 text-sm font-light tracking-wide text-white shadow-[0_10px_30px_-8px_rgba(96,165,250,0.6),0_0_24px_rgba(167,139,250,0.4)] transition-all duration-300 hover:scale-[1.05] hover:brightness-105 active:scale-[0.98]"
           >
             {t("ctaTry")}
           </a>

@@ -96,7 +96,7 @@ export function Newsletter() {
           onToken={setTurnstileToken}
           theme="auto"
         />
-        <Button type="submit" disabled={subscribeStatus === "loading"} className="rounded-full bg-gradient-to-r from-blue-500 to-violet-500 shadow-lg shadow-blue-400/25 hover:opacity-90">
+        <Button type="submit" disabled={subscribeStatus === "loading"} className="rounded-full bg-gradient-to-r from-blue-400 to-violet-400 shadow-[0_10px_30px_-8px_rgba(96,165,250,0.6),0_0_24px_rgba(167,139,250,0.4)] transition-all duration-300 hover:scale-[1.05] hover:brightness-105 active:scale-[0.98]">
           {subscribeStatus === "loading" ? (
             t("subscribing")
           ) : (
