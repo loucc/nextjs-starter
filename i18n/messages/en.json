@@ -95,7 +95,15 @@
         "title": "Round-the-clock companionship",
         "description": "Available 24/7 — because feelings don't keep office hours."
       }
-    ]
+    ],
+    "heroPoints": [
+      "24/7 emotional guidance",
+      "Heartful companionship",
+      "Stress relief",
+      "Mood healing"
+    ],
+    "ctaTry": "Try now",
+    "ctaLearn": "Learn more"
   },
   "Blog": {
     "title": "Blog Posts",
