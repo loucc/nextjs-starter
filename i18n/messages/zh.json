@@ -22,6 +22,10 @@
         "rel": "noopener noreferrer nofollow"
       },
       {
+        "name": "价格",
+        "href": "/pricing"
+      },
+      {
         "name": "高级版",
         "href": "https://nexty.dev",
         "target": "_blank",
@@ -182,5 +186,73 @@
     "notFoundTitle": "页面未找到",
     "notFoundDescription": "您访问的页面不存在或已被移动。",
     "backHome": "返回首页"
+  },
+  "Pricing": {
+    "title": "价格方案",
+    "description": "简单透明的定价。免费开始,按需升级。",
+    "period": "/月",
+    "perMonth": "每月",
+    "featuresTitle": "包含内容",
+    "ctaStart": "免费开始",
+    "ctaGetPro": "获取 Pro",
+    "ctaContact": "联系我们",
+    "popular": "最受欢迎",
+    "contactFallback": "联系我们定制方案",
+    "plans": [
+      {
+        "name": "入门版",
+        "price": "¥0",
+        "description": "适合个人用户起步",
+        "features": [
+          "全部核心功能",
+          "1 个项目",
+          "社区支持",
+          "基础分析"
+        ]
+      },
+      {
+        "name": "专业版",
+        "price": "¥69",
+        "description": "适合创作者和小团队",
+        "features": [
+          "入门版全部功能",
+          "无限项目",
+          "优先支持",
+          "高级分析",
+          "自定义域名"
+        ]
+      },
+      {
+        "name": "企业版",
+        "price": "¥199",
+        "description": "适合成长型企业",
+        "features": [
+          "专业版全部功能",
+          "团队协作",
+          "SSO 与权限管理",
+          "专属支持",
+          "自定义集成"
+        ]
+      }
+    ],
+    "faqTitle": "常见问题",
+    "faq": [
+      {
+        "q": "可以随时取消吗?",
+        "a": "可以。订阅按月计费,可随时取消——当前计费周期结束前仍可使用。"
+      },
+      {
+        "q": "支持退款吗?",
+        "a": "所有付费方案均提供 14 天无理由退款保障。"
+      },
+      {
+        "q": "有免费试用吗?",
+        "a": "入门版永久免费。付费方案包含 7 天免费试用。"
+      },
+      {
+        "q": "支持哪些支付方式?",
+        "a": "我们通过安全的支付服务商接受主流信用卡,企业版支持对公转账开票。"
+      }
+    ]
   }
 }

@@ -22,6 +22,10 @@
         "rel": "noopener noreferrer nofollow"
       },
       {
+        "name": "Pricing",
+        "href": "/pricing"
+      },
+      {
         "name": "Pro Version",
         "href": "https://nexty.dev",
         "target": "_blank",
@@ -182,5 +186,73 @@
     "notFoundTitle": "Page not found",
     "notFoundDescription": "The page you are looking for doesn't exist or has been moved.",
     "backHome": "Back to homepage"
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "description": "Simple, transparent pricing. Start free, upgrade when you need more.",
+    "period": "/month",
+    "perMonth": "per month",
+    "featuresTitle": "What's included",
+    "ctaStart": "Start for free",
+    "ctaGetPro": "Get Pro",
+    "ctaContact": "Contact us",
+    "popular": "Most popular",
+    "contactFallback": "Contact us for a custom plan",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$0",
+        "description": "For individuals getting started",
+        "features": [
+          "All core features",
+          "1 project",
+          "Community support",
+          "Basic analytics"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$9",
+        "description": "For creators and small teams",
+        "features": [
+          "Everything in Starter",
+          "Unlimited projects",
+          "Priority support",
+          "Advanced analytics",
+          "Custom domain"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "$29",
+        "description": "For growing businesses",
+        "features": [
+          "Everything in Pro",
+          "Team collaboration",
+          "SSO & access control",
+          "Dedicated support",
+          "Custom integrations"
+        ]
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "Can I cancel anytime?",
+        "a": "Yes. Subscriptions are month-to-month and you can cancel at any time — you keep access until the end of the billing period."
+      },
+      {
+        "q": "Do you offer refunds?",
+        "a": "We offer a 14-day money-back guarantee on all paid plans. No questions asked."
+      },
+      {
+        "q": "Is there a free trial?",
+        "a": "The Starter plan is free forever. Paid plans include a 7-day free trial."
+      },
+      {
+        "q": "What payment methods do you accept?",
+        "a": "We accept major credit cards via our secure payment provider, and offer invoicing on the Business plan."
+      }
+    ]
   }
 }
