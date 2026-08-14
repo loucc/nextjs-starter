@@ -280,6 +280,28 @@ pnpm lint
 pnpm type-check
 ```
 
+### 依存関係のアップグレード
+
+月1回程度のメンテナンス手順:
+
+```bash
+pnpm outdated                # バージョン差分を確認
+pnpm add <pkg>@latest ...    # 同一メジャー内のアップグレードを一括適用
+pnpm test && pnpm lint && pnpm build && pnpm build:worker  # 全体検証
+```
+
+経験則:
+
+- **Next.js ファミリーは同期してアップグレード**:`next`、`@next/env`、
+  `@next/bundle-analyzer`、`@next/mdx`、`eslint-config-next` は同じ
+  minor/patch に揃える
+- **同一メジャー内のアップグレードは安全**;適用後は必ず検証チェーンを実行
+- **意図的に据え置き**:`eslint`(9.x — eslint-config-next がロック)、
+  `typescript`(5.x — Next 16 のサポート範囲)、`@types/node`(20.x —
+  `engines` と一致)
+- **lucide-react は 0.x に固定**:1.x はブランドアイコン(GithubIcon など)と
+  `*Icon` エイリアスを削除しており、アップグレードにはコード移行が必要
+
 ### 多言語開発
 
 1. 新しい言語サポートの追加：

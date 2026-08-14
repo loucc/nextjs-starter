@@ -282,6 +282,28 @@ pnpm lint
 pnpm type-check
 ```
 
+### Dependency Upgrades
+
+Monthly maintenance routine:
+
+```bash
+pnpm outdated                # inspect what moved
+pnpm add <pkg>@latest ...    # batch same-major upgrades
+pnpm test && pnpm lint && pnpm build && pnpm build:worker  # verify
+```
+
+Rules of thumb:
+
+- **Upgrade the Next.js family together**: `next`, `@next/env`,
+  `@next/bundle-analyzer`, `@next/mdx` and `eslint-config-next` must stay
+  on the same minor/patch version.
+- **Same-major bumps are safe**; always run the full verify chain after.
+- **Held back deliberately**: `eslint` (9.x — locked by
+  eslint-config-next), `typescript` (5.x — Next 16 support matrix),
+  `@types/node` (20.x — matches the `engines` field).
+- **lucide-react stays on 0.x**: 1.x removed brand icons (GithubIcon, ...)
+  and the `*Icon` aliases — upgrade only together with a code migration.
+
 ### Internationalization Development
 
 1. Adding new language support:

@@ -274,6 +274,26 @@ pnpm lint
 pnpm type-check
 ```
 
+### 依赖升级
+
+建议每月一次的维护流程:
+
+```bash
+pnpm outdated                # 查看版本变化
+pnpm add <pkg>@latest ...    # 批量升级同 major 版本
+pnpm test && pnpm lint && pnpm build && pnpm build:worker  # 全量验证
+```
+
+经验法则:
+
+- **Next.js 家族必须同步升级**:`next`、`@next/env`、`@next/bundle-analyzer`、
+  `@next/mdx`、`eslint-config-next` 保持同一 minor/patch 版本
+- **同 major 升级是安全的**;升级后必须跑完整验证链
+- **刻意不升级**:`eslint`(9.x,受 eslint-config-next 锁定)、`typescript`
+  (5.x,Next 16 支持矩阵)、`@types/node`(20.x,与 engines 匹配)
+- **lucide-react 停在 0.x**:1.x 移除了品牌图标(GithubIcon 等)与 `*Icon`
+  别名,升级必须伴随代码迁移
+
 ### 多语言开发
 
 1. 新增语言支持：
