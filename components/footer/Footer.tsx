@@ -18,7 +18,6 @@ export default async function Footer() {
   const navLinks: HeaderLink[] = tHeader.raw("links");
   const supportLinks: HeaderLink[] = [
     { name: tFooter("Pricing"), href: "/pricing" },
-    { name: tFooter("Changelog"), href: "/changelog" },
     { name: tFooter("PrivacyPolicy"), href: "/privacy-policy" },
     { name: tFooter("TermsOfService"), href: "/terms-of-service" },
   ];

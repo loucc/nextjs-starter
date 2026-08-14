@@ -76,7 +76,6 @@
     "title": "SerenAI",
     "tagLine": "Your AI emotional companion",
     "Pricing": "Pricing",
-    "Changelog": "Changelog",
     "intro": "SerenAI is your dedicated AI emotional companion — gentle, private, and available whenever you need a calm moment.",
     "productTitle": "Product",
     "supportTitle": "Support",
@@ -235,12 +234,6 @@
         "a": "We accept major credit cards via our secure payment provider, and offer invoicing on the Business plan."
       }
     ]
-  },
-  "Changelog": {
-    "title": "Changelog",
-    "description": "Every update and improvement, in one place. Follow along as the product evolves.",
-    "subscribeHint": "Stay up to date — subscribe to the",
-    "rss": "RSS feed"
   },
   "Technology": {
     "title": "AI Technology",

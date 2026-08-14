@@ -1,12 +1,10 @@
 import {
   blogModules,
-  changelogModules,
   MDXModule,
   pageModules,
 } from '@/content-loader';
 import { DEFAULT_LOCALE } from '@/i18n/routing';
 import { BlogPost } from '@/types/blog';
-import { ChangelogEntry } from '@/types/changelog';
 import type { ComponentType } from 'react';
 
 // ---------------------------------------------------------------------------
@@ -28,7 +26,6 @@ export type ContentPage = 'about' | 'privacy-policy' | 'terms-of-service';
 // ---------------------------------------------------------------------------
 export interface ContentRepository {
   getPosts(locale?: string): Promise<{ posts: BlogPost[] }>;
-  getChangelog(locale?: string): Promise<{ entries: ChangelogEntry[] }>;
   getPageComponent(
     page: ContentPage,
     locale: string
@@ -81,38 +78,6 @@ const globRepository: ContentRepository = {
     return { posts };
   },
 
-  async getChangelog(locale: string = DEFAULT_LOCALE) {
-    const keys = Object.keys(changelogModules)
-      .filter(
-        (key) => key.startsWith(`changelogs/${locale}/`) && key.endsWith('.mdx')
-      )
-      .sort();
-
-    const entries: ChangelogEntry[] = keys.map((key) => {
-      const mod: MDXModule = changelogModules[key];
-      const data = mod.frontmatter || {};
-
-      return {
-        locale, // use locale parameter
-        version: data.version,
-        title: data.title,
-        tags: data.tags,
-        // remark-frontmatter leaves YAML dates as strings; normalize to Date.
-        date: data.date ? new Date(data.date) : data.date,
-        Component: mod.default,
-        metadata: data,
-      };
-    });
-
-    // Newest first.
-    entries.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-
-    // Missing locale dir -> { entries: [] }, same convention as getPosts.
-    return { entries };
-  },
-
   async getPageComponent(page: ContentPage, locale: string) {
     const mod = pageModules[`content/${page}/${locale}.mdx`];
     // Missing file -> undefined, replicating the old fs try/catch semantics
@@ -128,12 +93,6 @@ export const repository: ContentRepository = globRepository;
 // ---------------------------------------------------------------------------
 export async function getPosts(locale?: string): Promise<{ posts: BlogPost[] }> {
   return repository.getPosts(locale);
-}
-
-export async function getChangelog(
-  locale?: string
-): Promise<{ entries: ChangelogEntry[] }> {
-  return repository.getChangelog(locale);
 }
 
 export async function getPageComponent(

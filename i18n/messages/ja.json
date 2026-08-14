@@ -76,7 +76,6 @@
     "title": "SerenAI",
     "tagLine": "あなたの AI 感情コンパニオン",
     "Pricing": "料金",
-    "Changelog": "更新履歴",
     "intro": "SerenAI はあなた専用の AI 感情コンパニオン——やさしく、プライベートに、静かなひとときをいつでも。",
     "productTitle": "製品",
     "supportTitle": "サポート",
@@ -235,12 +234,6 @@
         "a": "主要なクレジットカードに対応しています。ビジネスプランでは請求書払いも可能です。"
       }
     ]
-  },
-  "Changelog": {
-    "title": "更新履歴",
-    "description": "すべてのアップデートと改善を一か所に。製品の進化を追いかけよう。",
-    "subscribeHint": "最新情報をお届け — 購読する",
-    "rss": "RSS フィード"
   },
   "Technology": {
     "title": "AI 技術",
