@@ -1,30 +1,6 @@
 import { siteConfig } from "@/config/site";
-import { Inter, Noto_Sans_JP, Noto_Sans_SC } from "next/font/google";
 import { Viewport } from "next";
 import Script from "next/script";
-
-// Healing-tech font system: Inter for latin, Noto Sans SC/JP for CJK —
-// self-hosted at build time via next/font (no runtime external requests).
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const notoSansSC = Noto_Sans_SC({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-noto-sc",
-  display: "swap",
-  preload: false,
-});
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-noto-jp",
-  display: "swap",
-  preload: false,
-});
 
 // Root layout: owns <html>/<body> and the beforeInteractive theme
 // bootstrap. Root layouts never re-mount on client navigation — the
@@ -43,16 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${notoSansSC.variable} ${notoSansJP.variable}`}
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           id="theme-init"
           src="/theme-init.js"
           strategy="beforeInteractive"
+        />
+        {/* Healing-tech font system: Inter + Noto Sans SC/JP. Served from
+            the Google Fonts CDN — next/font's self-hosting is incompatible
+            with the OpenNext worker bundler (Turbopack font internals). */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
         />
       </head>
       <body className="min-h-screen bg-background flex flex-col font-sans antialiased">
