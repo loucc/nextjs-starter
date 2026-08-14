@@ -23,7 +23,10 @@ export default function Hero() {
           <span className="relative">AI</span>
         </span>
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-2xl tracking-tight text-slate-700 dark:text-slate-500">
+      <p className="mx-auto mt-6 max-w-2xl text-2xl sm:text-3xl font-semibold tracking-tight bg-gradient-to-r from-blue-600 to-violet-500 bg-clip-text text-transparent">
+        {t("slogan")}
+      </p>
+      <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
         {t("description")}
       </p>
 

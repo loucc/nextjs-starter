@@ -71,7 +71,26 @@
   "Home": {
     "title": "SerenAI",
     "tagLine": "Your AI emotional companion",
-    "description": "SerenAI is your dedicated AI emotional companion, providing professional mood healing, emotional guidance, stress relief and mental relaxation services. Powered by advanced AI emotion recognition technology, it offers personalized emotional comfort and round-the-clock mental support to ease anxiety, emotional burnout and loneliness. Discover gentle, tech-driven mental wellness and calm your mind with SerenAI."
+    "description": "SerenAI is your dedicated AI emotional companion, providing professional mood healing, emotional guidance, stress relief and mental relaxation services. Powered by advanced AI emotion recognition technology, it offers personalized emotional comfort and round-the-clock mental support to ease anxiety, emotional burnout and loneliness. Discover gentle, tech-driven mental wellness and calm your mind with SerenAI.",
+    "slogan": "AI emotional companionship that heals every feeling",
+    "quoteTitle": "Embrace every emotion, gently heal yourself",
+    "careTitle": "24/7 AI emotional guidance to dissolve stress and anxiety",
+    "ctaTitle": "Let AI become your safe haven for every feeling",
+    "ctaButton": "Start your healing journey",
+    "features": [
+      {
+        "title": "Professional mood healing",
+        "description": "Science-informed techniques to process difficult feelings and restore your balance."
+      },
+      {
+        "title": "Emotional guidance",
+        "description": "Thoughtful, non-judgmental conversations that help you understand your feelings."
+      },
+      {
+        "title": "Round-the-clock companionship",
+        "description": "Available 24/7 — because feelings don't keep office hours."
+      }
+    ]
   },
   "Blog": {
     "title": "Blog Posts",

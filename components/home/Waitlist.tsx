@@ -75,7 +75,10 @@ export default function Waitlist() {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <section
+      id="waitlist"
+      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+    >
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 sm:p-12">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-center lg:text-left">
