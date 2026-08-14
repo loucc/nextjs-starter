@@ -9,7 +9,6 @@ import { BlogPost } from "@/types/blog";
 export function organizationJsonLd(): Record<string, unknown> {
   const sameAs = [
     siteConfig.socialLinks?.twitter,
-    siteConfig.socialLinks?.github,
     siteConfig.socialLinks?.discord,
     siteConfig.socialLinks?.bluesky,
   ].filter(Boolean);

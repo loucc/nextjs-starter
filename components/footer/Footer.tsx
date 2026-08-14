@@ -3,7 +3,7 @@ import { TwitterX } from "@/components/social-icons/icons";
 import { siteConfig } from "@/config/site";
 import { Link as I18nLink } from "@/i18n/routing";
 import { FooterLink } from "@/types/common";
-import { GithubIcon, MailIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import { getMessages, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { SiBluesky, SiDiscord } from "react-icons/si";
@@ -38,19 +38,6 @@ export default async function Footer() {
                 <p className="text-sm p4-4 md:pr-12">{t("tagLine")}</p>
 
                 <div className="flex items-center gap-2">
-                  {siteConfig.socialLinks?.github && (
-                    <Link
-                      href={siteConfig.socialLinks.github}
-                      prefetch={false}
-                      target="_blank"
-                      rel="noreferrer nofollow noopener"
-                      aria-label="GitHub"
-                      title="View on GitHub"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <GithubIcon className="size-4" aria-hidden="true" />
-                    </Link>
-                  )}
                   {siteConfig.socialLinks?.discord && (
                     <Link
                       href={siteConfig.socialLinks.discord}
