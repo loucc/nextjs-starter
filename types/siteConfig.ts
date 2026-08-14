@@ -17,7 +17,6 @@ export type SiteConfig = {
     bluesky?: string
     twitter?: string
     twitterZh?: string
-    discord?: string
     email?: string
   }
   creator: string

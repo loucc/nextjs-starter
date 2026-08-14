@@ -5,7 +5,7 @@ import { FooterLink } from "@/types/common";
 import { MailIcon } from "lucide-react";
 import { getMessages, getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { SiBluesky, SiDiscord, SiX } from "react-icons/si";
+import { SiBluesky, SiX } from "react-icons/si";
 
 export default async function Footer() {
   const messages = await getMessages();
@@ -37,19 +37,6 @@ export default async function Footer() {
                 <p className="text-sm p4-4 md:pr-12">{t("tagLine")}</p>
 
                 <div className="flex items-center gap-2">
-                  {siteConfig.socialLinks?.discord && (
-                    <Link
-                      href={siteConfig.socialLinks.discord}
-                      prefetch={false}
-                      target="_blank"
-                      rel="noreferrer nofollow noopener"
-                      aria-label="Discord"
-                      title="Join Discord"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <SiDiscord className="w-4 h-4" aria-hidden="true" />
-                    </Link>
-                  )}
                   {siteConfig.socialLinks?.twitter && (
                     <Link
                       href={siteConfig.socialLinks.twitter}

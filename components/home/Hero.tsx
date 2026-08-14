@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { SiDiscord } from "react-icons/si";
 
 export default function Hero() {
   const t = useTranslations("Home");
@@ -32,24 +29,12 @@ export default function Hero() {
 
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-2">
         <Button
-          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
-          variant="outline"
+          className="h-11 w-full sm:w-fit rounded-xl px-8 py-2 bg-gradient-to-r from-blue-600 to-violet-500 text-white hover:from-blue-700 hover:to-violet-600"
           asChild
         >
-          <Link
-            href={
-              siteConfig.socialLinks?.discord ||
-              "https://discord.com/invite/R7bUxWKRqZ"
-            }
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            title="Join Discord"
-            prefetch={false}
-            className="flex items-center gap-2"
-          >
-            <SiDiscord className="w-4 h-4 text-indigo-500" />
-            Join Discord
-          </Link>
+          <a href="#waitlist" className="flex items-center gap-2">
+            {t("ctaButton")}
+          </a>
         </Button>
       </div>
     </section>

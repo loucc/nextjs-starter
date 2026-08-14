@@ -3,7 +3,6 @@ import { SiteConfig } from "@/types/siteConfig";
 const TWITTER_URL = 'https://x.com/weijunext'
 const BSKY_URL = 'https://bsky.app/profile/judewei.bsky.social'
 const EMAIL_URL = 'weijunext@gmail.com'
-const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL
 
 export const siteConfig: SiteConfig = {
   name: "SerenAI",
@@ -19,7 +18,6 @@ export const siteConfig: SiteConfig = {
   ],
   creator: '@weijunext',
   socialLinks: {
-    discord: DISCORD_URL,
     twitter: TWITTER_URL,
     bluesky: BSKY_URL,
     email: EMAIL_URL
